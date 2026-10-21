@@ -1,0 +1,157 @@
+{
+  "startedAtUtc": "2026-10-21T02:21:48.874Z",
+  "startedAtShanghai": "2026-10-21 10:21:48 Asia/Shanghai (UTC+08:00)",
+  "browser": {
+    "name": "Microsoft Edge",
+    "executablePath": "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe",
+    "version": "155.0.4283.45",
+    "engineVersion": "155.0.0.0",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0",
+    "headless": true,
+    "disableGpu": true
+  },
+  "targetUrl": "http://127.0.0.1:8791/",
+  "modelMetadata": {
+    "modelName": "qwen3.8-flash",
+    "qaPromptVersion": "qa-v5",
+    "hintPromptVersion": "hint-v1"
+  },
+  "runScope": "Focused real-model hints-only UI run: exactly three hint calls at most; no question-model calls.",
+  "cumulativeCallAccounting": {
+    "priorReportedCalls": 11,
+    "maxCallsThisRun": 3,
+    "totalIfAllThreeUsed": 14,
+    "actualCallsIncludingPrior": 12,
+    "remainingWithinAuthorizedRun": 2
+  },
+  "api": {
+    "configured": true,
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/api/health",
+        "status": null,
+        "failed": false,
+        "recordingNote": "Response waiter succeeded; exact status was not retained because request listener origin filter failed."
+      },
+      {
+        "method": "GET",
+        "path": "/api/puzzles",
+        "status": null,
+        "failed": false,
+        "recordingNote": "Response waiter succeeded; exact status was not retained because request listener origin filter failed."
+      },
+      {
+        "method": "POST",
+        "path": "/api/sessions",
+        "status": 201,
+        "failed": false
+      },
+      {
+        "method": "POST",
+        "path": "/api/sessions/:session/hints",
+        "status": null,
+        "failed": false,
+        "responseSucceeded": true,
+        "recordingNote": "Scoped response waiter succeeded and response.ok() passed; exact status was not retained."
+      }
+    ]
+  },
+  "aiCalls": {
+    "maxAllowed": 3,
+    "hintRequests": 1,
+    "total": 1
+  },
+  "assertions": {
+    "libraryLoaded": true,
+    "hintSessionCreated": true,
+    "initialHintSessionClean": true
+  },
+  "hintFindings": [
+    {
+      "index": 1,
+      "expectedCounterLabel": "提示 1 / 3",
+      "afterResponseSnapshot": {
+        "visibleHintRows": 1,
+        "counterLabel": "提示\n1 / 3",
+        "progress": "0 / 4 条必要线索"
+      },
+      "hintRowVisible": true,
+      "hintTextCaptured": true,
+      "hintText": "讲解员能控制什么？星星消失未必是故障，想想这些光点的来源。",
+      "progressAfter": "0 / 4 条必要线索",
+      "counterVerified": false,
+      "counterLabelAfterRow": null
+    }
+  ],
+  "sessionResetChecks": [
+    {
+      "after": "library",
+      "progressText": "0 / 4 条必要线索",
+      "conversationCount": 0,
+      "hintCounter": "提示 0 / 3",
+      "hintDisabled": false
+    }
+  ],
+  "userVisibleTexts": {
+    "puzzleTitle": "天幕之外",
+    "hints": [
+      {
+        "index": 1,
+        "text": "讲解员能控制什么？星星消失未必是故障，想想这些光点的来源。",
+        "characterCount": 29,
+        "httpStatus": null,
+        "responseOk": true,
+        "hintCounter": "提示 1 / 3",
+        "progressAfter": "0 / 4 条必要线索",
+        "captureSource": "failure UI snapshot"
+      }
+    ]
+  },
+  "screenshots": [
+    "real-hints-browser-library-390-20261021T022148.874Z.png",
+    "real-hints-browser-failure-hint-1-request-20261021T022148.874Z.png"
+  ],
+  "pageErrors": [],
+  "manualHintReview": {
+    "status": "partial",
+    "reviewItems": [
+      "direction",
+      "semantic repetition",
+      "hidden-answer leakage"
+    ],
+    "hintsObserved": 1,
+    "directionAssessment": "The captured hint points the player toward the guide and the origin of the light.",
+    "semanticRepetitionAssessment": "Only one hint was captured; repetition across hints cannot be assessed.",
+    "hiddenAnswerLeakageAssessment": "No obvious answer leak is visible in the one captured hint.",
+    "remainingReview": [
+      "semantic repetition across three hints",
+      "third-hint exhaustion label",
+      "fourth-hint disabled state",
+      "leave/new-game reset",
+      "give-up terminal state"
+    ]
+  },
+  "failureUiSnapshot": {
+    "stage": "hint-1-request",
+    "visibleHintRows": 1,
+    "visibleHints": [
+      {
+        "role": "提示",
+        "text": "讲解员能控制什么？星星消失未必是故障，想想这些光点的来源。"
+      }
+    ],
+    "counterLabel": "提示\n1 / 3",
+    "progress": "0 / 4 条必要线索"
+  },
+  "errors": [
+    {
+      "stage": "hint-1-request",
+      "name": "Error"
+    }
+  ],
+  "finishedAtUtc": "2026-10-21T02:21:51.855Z",
+  "finishedAtShanghai": "2026-10-21 10:21:51 Asia/Shanghai (UTC+08:00)",
+  "status": "failed",
+  "harnessFinding": "The response waiter for the first POST /hints resolved and the UI snapshot contained one visible hint. The request listener compared url.origin without a slash to targetUrl with a trailing slash, so it recorded no requests and the next count assertion stopped the run. The report was corrected to one actual hint call; no retry was made."
+}

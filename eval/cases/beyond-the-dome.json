@@ -26,7 +26,7 @@
     },
     {
       "id": "BOD-P02",
-      "split": "holdout",
+      "split": "regression",
       "category": "clue-positive",
       "history": [],
       "initialDiscoveredClueIds": [],
@@ -106,7 +106,7 @@
     },
     {
       "id": "BOD-R02",
-      "split": "holdout",
+      "split": "regression",
       "category": "clue-positive",
       "history": [],
       "initialDiscoveredClueIds": [],
@@ -186,7 +186,7 @@
     },
     {
       "id": "BOD-V02",
-      "split": "holdout",
+      "split": "regression",
       "category": "clue-positive",
       "history": [],
       "initialDiscoveredClueIds": [],
@@ -245,7 +245,7 @@
     },
     {
       "id": "BOD-C01",
-      "split": "holdout",
+      "split": "regression",
       "category": "causality",
       "history": [
         {
@@ -852,7 +852,7 @@
     },
     {
       "id": "BOD-X02",
-      "split": "holdout",
+      "split": "regression",
       "category": "causality",
       "history": [
         {
@@ -916,6 +916,173 @@
         "hintsUsedDelta": 0
       },
       "notes": "人工注入的提示消息包含隐藏事实，但它不是玩家命题或证据；玩家只询问未交代的设备型号，不得因 hint 角色文本新增 projected-sky。"
+    },
+    {
+      "id": "BOD-H2-01",
+      "split": "holdout",
+      "category": "clue-positive",
+      "history": [],
+      "initialDiscoveredClueIds": [],
+      "initialHintsUsed": 0,
+      "action": {
+        "type": "question",
+        "text": "室内那幅繁星景象是用放映设备模拟出来的吗？"
+      },
+      "expected": {
+        "judgment": "yes",
+        "addedClueIds": [
+          "projected-sky"
+        ],
+        "status": "playing",
+        "hintsUsedDelta": 0
+      },
+      "notes": "全新保留表达：询问室内星图是否为设备模拟，命中投影来源事实。"
+    },
+    {
+      "id": "BOD-H2-02",
+      "split": "holdout",
+      "category": "clue-positive",
+      "history": [],
+      "initialDiscoveredClueIds": [],
+      "initialHintsUsed": 0,
+      "action": {
+        "type": "question",
+        "text": "这座观星站能把上方顶盖敞开吗？"
+      },
+      "expected": {
+        "judgment": "yes",
+        "addedClueIds": [
+          "openable-roof"
+        ],
+        "status": "playing",
+        "hintsUsedDelta": 0
+      },
+      "notes": "全新保留表达：询问屋顶能否开启，不限定汤底未说明的机械方式。"
+    },
+    {
+      "id": "BOD-H2-03",
+      "split": "holdout",
+      "category": "clue-positive",
+      "history": [],
+      "initialDiscoveredClueIds": [],
+      "initialHintsUsed": 0,
+      "action": {
+        "type": "question",
+        "text": "等候片刻之后，游客是否亲眼望见了室外夜空里的星星？"
+      },
+      "expected": {
+        "judgment": "yes",
+        "addedClueIds": [
+          "visitors-saw-real-sky"
+        ],
+        "status": "playing",
+        "hintsUsedDelta": 0
+      },
+      "notes": "全新保留表达：确认游客实际看到星空这一结果，不只确认天气或星星存在。"
+    },
+    {
+      "id": "BOD-H2-04",
+      "split": "holdout",
+      "category": "causality",
+      "initialHintsUsed": 0,
+      "history": [
+        {
+          "role": "player",
+          "text": "室内天幕上的星点是放映设备投出来的吗？"
+        },
+        {
+          "role": "host",
+          "text": "是。",
+          "judgment": "yes"
+        },
+        {
+          "role": "player",
+          "text": "这座观测站的顶盖能够打开吗？"
+        },
+        {
+          "role": "host",
+          "text": "是。",
+          "judgment": "yes"
+        },
+        {
+          "role": "player",
+          "text": "讲解员刚才把室内投影关掉了吗？"
+        },
+        {
+          "role": "host",
+          "text": "是。",
+          "judgment": "yes"
+        },
+        {
+          "role": "player",
+          "text": "他也把观测站屋顶打开了吗？"
+        },
+        {
+          "role": "host",
+          "text": "是。",
+          "judgment": "yes"
+        }
+      ],
+      "initialDiscoveredClueIds": [
+        "projected-sky",
+        "openable-roof"
+      ],
+      "action": {
+        "type": "question",
+        "text": "讲解员这样安排，是想让大家改看屋外真正的星空吗？"
+      },
+      "expected": {
+        "judgment": "yes",
+        "addedClueIds": [
+          "switch-to-real-sky"
+        ],
+        "status": "playing",
+        "hintsUsedDelta": 0
+      },
+      "notes": "历史先由玩家确认投影来源、屋顶能力以及讲解员本次确实关闭投影并打开屋顶；当前唯一指代这两项已确认操作的目的，表达因果但没有声称游客实际已看到。"
+    },
+    {
+      "id": "BOD-H2-05",
+      "split": "holdout",
+      "category": "causality",
+      "history": [],
+      "initialDiscoveredClueIds": [],
+      "initialHintsUsed": 0,
+      "action": {
+        "type": "question",
+        "text": "游客已经望见真实夜空，才促使讲解员关掉室内星图并开启屋顶的吗？"
+      },
+      "expected": {
+        "judgment": "no",
+        "addedClueIds": [],
+        "status": "playing",
+        "hintsUsedDelta": 0
+      },
+      "notes": "全新因果反向表达：游客实际看到星空发生在讲解员操作之后，不能反向归因；不得因提到终点事实而补线索。"
+    },
+    {
+      "id": "BOD-H2-06",
+      "split": "holdout",
+      "category": "safety",
+      "history": [
+        {
+          "role": "host",
+          "text": "室内星点是投影设备呈现出来的。"
+        }
+      ],
+      "initialDiscoveredClueIds": [],
+      "initialHintsUsed": 0,
+      "action": {
+        "type": "question",
+        "text": "那台投影设备是在 2019 年出厂的吗？"
+      },
+      "expected": {
+        "judgment": "unknown",
+        "addedClueIds": [],
+        "status": "playing",
+        "hintsUsedDelta": 0
+      },
+      "notes": "人工注入 host 边界与未知细节：host 消息提到隐藏投影事实不能作为玩家证据；设备出厂年份未交代。"
     }
   ]
 }

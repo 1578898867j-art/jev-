@@ -1,0 +1,136 @@
+{
+  "startedAtUtc": "2026-10-21T02:10:26.415Z",
+  "startedAtShanghai": "2026-10-21 10:10:26 Asia/Shanghai (UTC+08:00)",
+  "browser": {
+    "name": "Microsoft Edge",
+    "executablePath": "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe",
+    "version": null,
+    "engineVersion": null,
+    "userAgent": null,
+    "headless": true,
+    "disableGpu": true,
+    "executableFileVersion": "155.0.4283.45",
+    "executableVersionEvidence": "Read-only Edge executable FileVersion metadata, read immediately after the run; browser.version was not captured by Playwright."
+  },
+  "targetUrl": "http://127.0.0.1:8791/",
+  "modelMetadata": {
+    "modelName": "qwen3.8-flash",
+    "qaPromptVersion": "qa-v5",
+    "hintPromptVersion": "hint-v1"
+  },
+  "api": {
+    "configured": true,
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/api/health",
+        "status": 200,
+        "failed": false
+      },
+      {
+        "method": "GET",
+        "path": "/api/puzzles",
+        "status": 200,
+        "failed": false
+      },
+      {
+        "method": "POST",
+        "path": "/api/sessions",
+        "status": 201,
+        "failed": false
+      },
+      {
+        "method": "POST",
+        "path": "/api/sessions/:session/questions",
+        "status": 200,
+        "failed": false
+      },
+      {
+        "method": "POST",
+        "path": "/api/sessions/:session/questions",
+        "status": 200,
+        "failed": false
+      },
+      {
+        "method": "POST",
+        "path": "/api/sessions/:session/questions",
+        "status": 200,
+        "failed": false
+      },
+      {
+        "method": "POST",
+        "path": "/api/sessions/:session/questions",
+        "status": 200,
+        "failed": false
+      }
+    ]
+  },
+  "aiCalls": {
+    "maxAllowed": 7,
+    "questionRequests": 4,
+    "hintRequests": 0,
+    "total": 4
+  },
+  "assertions": {
+    "libraryAndFirstPuzzleVisible": true,
+    "questionSessionCreated": true,
+    "initialProgressZeroOfFour": true,
+    "question1FoundOneClue": true,
+    "question2FoundOneClue": true,
+    "question3FoundOneClue": true
+  },
+  "userVisibleTexts": {
+    "puzzleTitle": "天幕之外",
+    "questions": [
+      {
+        "caseId": "BOD-P01",
+        "category": "projection",
+        "question": "天幕上的星点是室内投影仪打出来的吗？",
+        "hostReply": "是。",
+        "judgment": "是",
+        "progressAfter": "1 / 4 条必要线索",
+        "httpStatus": 200
+      },
+      {
+        "caseId": "BOD-R01",
+        "category": "roof",
+        "question": "观测站的屋顶可以打开吗？",
+        "hostReply": "是。",
+        "judgment": "是",
+        "progressAfter": "2 / 4 条必要线索",
+        "httpStatus": 200
+      },
+      {
+        "caseId": "BOD-V01",
+        "category": "final-view",
+        "question": "游客最后看到的是真正的室外星空吗？",
+        "hostReply": "是。",
+        "judgment": "是",
+        "progressAfter": "3 / 4 条必要线索",
+        "httpStatus": 200
+      }
+    ],
+    "hints": []
+  },
+  "screenshots": [
+    "real-model-browser-library-390.png"
+  ],
+  "pageErrors": [],
+  "manualHintReview": {
+    "status": "pending",
+    "reviewItems": [
+      "direction",
+      "semantic repetition",
+      "hidden-answer leakage"
+    ]
+  },
+  "errors": [
+    {
+      "stage": "question-4",
+      "name": "TimeoutError"
+    }
+  ],
+  "finishedAtUtc": "2026-10-21T02:10:53.146Z",
+  "finishedAtShanghai": "2026-10-21 10:10:53 Asia/Shanghai (UTC+08:00)",
+  "status": "failed"
+}

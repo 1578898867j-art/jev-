@@ -84,3 +84,51 @@ GLM workspace 产品尚未激活；主控收到的受控实测为 HTTP 400 产�
 验证：`npx vitest run tests/eval/run.test.ts` 通过，1 个文件、6/6 项通过。主控负责随后重跑完整 47 项回归。
 
 变更：`tests/eval/run.test.ts`、`docs/CLEANUP_REPORT.md`。提示词版本、评测预期与运行时逻辑均未改。
+
+## Follow-up：qa-v3 提示词窄清理复核（2026-10-21）
+
+### Scope 与行为锁
+
+本轮只检查 `server/src/ai/prompts.ts` 的 qa-v3 新增分类规则与版本元数据。保持已批准的闭合细节 `unknown` / 已知偏题 `irrelevant` 边界、`negativeExamples` 与句子真值分离、直接事实/逻辑蕴含但不补外部条件、A/B 单项充分性或必要性不从共同行动推出，以及多项事实均明确为真时可统一回答 `yes`。证据、JSON、非 `yes` 空候选、hidden-content、因果表达规则及 `hint-v1` 不在本轮变更范围。
+
+### Cleanup 结果
+
+- 复核 qa-v3 新增文字未发现确证歧义、重复规则或与保留边界冲突；`QA_PROMPT_VERSION` 为 `qa-v3`，系统提示词展示该版本，问答 user payload 继续通过同一常量携带版本元数据。
+- 未修改提示词、测试或实现；只追加本报告。未增加镜像字符串测试、未访问 `.env`、未调用真实模型。
+
+### Quality Gates
+
+- 独立复审：主控报告 gpt-6.1/max 窄复审通过，未发现 P0/P1/P2。
+- 完整测试：主控报告 `npm test` 47/47 通过；本代理未重复运行。
+- Build：主控仍待运行，本报告不声明通过。
+- 真实回归评测：主控报告 30 条 regression 运行仍在进行；本报告不将其记为通过，结果待后续记录。
+- 本轮没有代码改动，因此未重复执行 typecheck 或测试。
+
+### Changed Files
+
+- `docs/CLEANUP_REPORT.md`：追加本轮 qa-v3 窄清理结论。
+- 源代码和测试无变更。
+
+## Follow-up：qa-v5 最终窄清理复核（2026-10-21）
+
+### Scope 与行为锁
+
+只复核 `server/src/ai/prompts.ts` 的 qa-v5 新增 few-shot、分类说明和 `QA_PROMPT_VERSION` 元数据。保留版本常量 `qa-v5`，系统提示词和问答 user payload 都继续引用该常量。保留 v5 的三个判定输出、示例与当前 `trustedStory` 隔离，以及主持人只消解唯一指代、事实仍以故事为依据且不作为玩家线索证据的规则。
+
+### Cleanup 结果
+
+- 没有发现需要改动 qa-v5 语义或元数据的其他确证问题；本轮不改提示词或测试，只追加本报告。
+- 记录一个已知 P3 措辞项并延期：提示词称“以下是三个独立微故事”，实际是一个独立微故事提供事实、三条例子共用该事实。依主控要求保持 qa-v5 原文以保留当前评测追踪性，留待未来版本处理。
+- 本轮未调用模型、未访问 `.env`，也未重复无关验证。
+
+### Quality Gates 与评测证据
+
+- 窄复审：主控报告 gpt-6.1/max 已审阅实际 qa-v5 diff 并批准。
+- Regression：主控报告 qa-v5 真实 30 条回归为 30/30；该结果由主控报告，本代理未执行。
+- Holdout：主控报告首轮为 4/5，C01 因上下文因果理解失败；仍有一条未匹配，不记为通过或已解决。
+- 完整测试与 build：主控计划在本次文档追加后运行 `npm test` 与 build；本代理不声明本轮已通过，也未重跑。
+
+### Changed Files
+
+- `docs/CLEANUP_REPORT.md`：追加 qa-v5 最终窄清理记录。
+- 源代码和测试无变更。

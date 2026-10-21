@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "mode": "validate-only",
+  "createdAt": "2026-10-21T02:20:53.543Z",
+  "puzzleId": "beyond-the-dome",
+  "puzzleVersion": "1.0.0",
+  "model": null,
+  "promptVersion": null,
+  "split": "all",
+  "rounds": 1,
+  "selectedCaseCount": 41,
+  "records": [],
+  "note": "Validate-only checks fixture schema and state consistency; it does not call a model and is not an accuracy result.",
+  "validatedOnly": true
+}

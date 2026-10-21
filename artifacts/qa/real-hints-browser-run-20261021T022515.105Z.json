@@ -1,0 +1,215 @@
+{
+  "startedAtUtc": "2026-10-21T02:25:15.106Z",
+  "startedAtShanghai": "2026-10-21 10:25:15 Asia/Shanghai (UTC+08:00)",
+  "browser": {
+    "name": "Microsoft Edge",
+    "executablePath": "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe",
+    "version": "155.0.4283.45",
+    "engineVersion": "155.0.0.0",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0",
+    "headless": true,
+    "disableGpu": true
+  },
+  "targetUrl": "http://127.0.0.1:8791/",
+  "modelMetadata": {
+    "modelName": "qwen3.8-flash",
+    "qaPromptVersion": "qa-v5",
+    "hintPromptVersion": "hint-v1"
+  },
+  "runScope": "Focused real-model hints-only UI run: exactly three hint calls at most; no question-model calls.",
+  "cumulativeCallAccounting": {
+    "priorReportedCalls": 12,
+    "maxCallsThisRun": 3,
+    "totalIfAllThreeUsed": 15
+  },
+  "api": {
+    "configured": true,
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/api/health",
+        "status": 200,
+        "failed": false
+      },
+      {
+        "method": "GET",
+        "path": "/api/puzzles",
+        "status": 200,
+        "failed": false
+      },
+      {
+        "method": "POST",
+        "path": "/api/sessions",
+        "status": 201,
+        "failed": false
+      },
+      {
+        "method": "POST",
+        "path": "/api/sessions/:session/hints",
+        "status": 200,
+        "failed": false
+      },
+      {
+        "method": "POST",
+        "path": "/api/sessions/:session/hints",
+        "status": 200,
+        "failed": false
+      },
+      {
+        "method": "POST",
+        "path": "/api/sessions/:session/hints",
+        "status": 200,
+        "failed": false
+      },
+      {
+        "method": "POST",
+        "path": "/api/sessions/:session/leave",
+        "status": 200,
+        "failed": false
+      },
+      {
+        "method": "POST",
+        "path": "/api/sessions",
+        "status": 201,
+        "failed": false
+      },
+      {
+        "method": "POST",
+        "path": "/api/sessions/:session/give-up",
+        "status": 200,
+        "failed": false
+      }
+    ]
+  },
+  "aiCalls": {
+    "maxAllowed": 3,
+    "hintRequests": 3,
+    "total": 3
+  },
+  "assertions": {
+    "libraryLoaded": true,
+    "hintSessionCreated": true,
+    "initialHintSessionClean": true,
+    "fourthHintDisabled": true,
+    "noFourthHintRequest": true,
+    "allHintsLeaveProgressAtZero": true,
+    "allThreeHintRowsVisible": true,
+    "leaveHintSessionReturnsToLibrary": true,
+    "newGameAfterHintsIsClear": true,
+    "giveUpSeparateTerminal": true,
+    "noPageErrors": true
+  },
+  "hintFindings": [
+    {
+      "index": 1,
+      "expectedCounterLabel": "提示 1 / 3",
+      "afterResponseSnapshot": {
+        "visibleHintRows": 1,
+        "counterLabel": "提示 1 / 3",
+        "progress": "0 / 4 条必要线索"
+      },
+      "hintRowVisible": true,
+      "hintTextCaptured": true,
+      "counterLabelAfterRow": "提示 1 / 3",
+      "counterVerified": true,
+      "hintText": "天幕上的星星并非来自窗外，想想室内显示设备的作用。",
+      "progressAfter": "0 / 4 条必要线索"
+    },
+    {
+      "index": 2,
+      "expectedCounterLabel": "提示 2 / 3",
+      "afterResponseSnapshot": {
+        "visibleHintRows": 2,
+        "counterLabel": "提示 2 / 3",
+        "progress": "0 / 4 条必要线索"
+      },
+      "hintRowVisible": true,
+      "hintTextCaptured": true,
+      "counterLabelAfterRow": "提示 2 / 3",
+      "counterVerified": true,
+      "hintText": "注意观测站上方覆盖游客的结构，它是否在任何时候都保持完全封闭？",
+      "progressAfter": "0 / 4 条必要线索"
+    },
+    {
+      "index": 3,
+      "expectedCounterLabel": "提示已用完 3 / 3",
+      "afterResponseSnapshot": {
+        "visibleHintRows": 3,
+        "counterLabel": "提示已用完 3 / 3",
+        "progress": "0 / 4 条必要线索"
+      },
+      "hintRowVisible": true,
+      "hintTextCaptured": true,
+      "counterLabelAfterRow": "提示已用完 3 / 3",
+      "counterVerified": true,
+      "hintText": "游客在黑暗中等待片刻后，视线最终落在了哪里？",
+      "progressAfter": "0 / 4 条必要线索"
+    }
+  ],
+  "sessionResetChecks": [
+    {
+      "after": "library",
+      "progressText": "0 / 4 条必要线索",
+      "conversationCount": 0,
+      "hintCounter": "提示 0 / 3",
+      "hintDisabled": false
+    },
+    {
+      "after": "left-hint-session",
+      "progressText": "0 / 4 条必要线索",
+      "conversationCount": 0,
+      "hintCounter": "提示 0 / 3",
+      "hintDisabled": false
+    }
+  ],
+  "userVisibleTexts": {
+    "puzzleTitle": "天幕之外",
+    "hints": [
+      {
+        "index": 1,
+        "text": "天幕上的星星并非来自窗外，想想室内显示设备的作用。",
+        "characterCount": 25,
+        "httpStatus": 200,
+        "progressAfter": "0 / 4 条必要线索",
+        "hintCounter": "提示 1 / 3"
+      },
+      {
+        "index": 2,
+        "text": "注意观测站上方覆盖游客的结构，它是否在任何时候都保持完全封闭？",
+        "characterCount": 31,
+        "httpStatus": 200,
+        "progressAfter": "0 / 4 条必要线索",
+        "hintCounter": "提示 2 / 3"
+      },
+      {
+        "index": 3,
+        "text": "游客在黑暗中等待片刻后，视线最终落在了哪里？",
+        "characterCount": 22,
+        "httpStatus": 200,
+        "progressAfter": "0 / 4 条必要线索",
+        "hintCounter": "提示已用完 3 / 3"
+      }
+    ]
+  },
+  "screenshots": [
+    "real-hints-browser-library-390-20261021T022515.105Z.png",
+    "real-hints-browser-hint-3-before-counter-390-20261021T022515.105Z.png",
+    "real-hints-browser-all-three-hints-390-20261021T022515.105Z.png",
+    "real-hints-browser-fresh-game-after-hints-390-20261021T022515.105Z.png",
+    "real-hints-browser-give-up-390-20261021T022515.105Z.png"
+  ],
+  "pageErrors": [],
+  "manualHintReview": {
+    "status": "pending",
+    "reviewItems": [
+      "direction",
+      "semantic repetition",
+      "hidden-answer leakage"
+    ]
+  },
+  "failureUiSnapshot": null,
+  "errors": [],
+  "finishedAtUtc": "2026-10-21T02:25:20.282Z",
+  "finishedAtShanghai": "2026-10-21 10:25:20 Asia/Shanghai (UTC+08:00)",
+  "status": "pending-manual-hint-review"
+}

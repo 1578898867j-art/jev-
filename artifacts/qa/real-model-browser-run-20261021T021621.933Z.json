@@ -1,0 +1,297 @@
+{
+  "startedAtUtc": "2026-10-21T02:16:21.933Z",
+  "startedAtShanghai": "2026-10-21 10:16:21 Asia/Shanghai (UTC+08:00)",
+  "browser": {
+    "name": "Microsoft Edge",
+    "executablePath": "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe",
+    "version": "155.0.4283.45",
+    "engineVersion": "155.0.0.0",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0",
+    "headless": true,
+    "disableGpu": true
+  },
+  "targetUrl": "http://127.0.0.1:8791/",
+  "runScope": "Bounded real-model UI integration run. The fourth question is ui-standard-cause wording and is not the frozen BOD-C01 holdout.",
+  "modelMetadata": {
+    "modelName": "qwen3.8-flash",
+    "qaPromptVersion": "qa-v5",
+    "hintPromptVersion": "hint-v1"
+  },
+  "api": {
+    "configured": true,
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/api/health",
+        "status": 200,
+        "failed": false
+      },
+      {
+        "method": "GET",
+        "path": "/api/puzzles",
+        "status": 200,
+        "failed": false
+      },
+      {
+        "method": "POST",
+        "path": "/api/sessions",
+        "status": 201,
+        "failed": false
+      },
+      {
+        "method": "POST",
+        "path": "/api/sessions/:session/questions",
+        "status": 200,
+        "failed": false
+      },
+      {
+        "method": "POST",
+        "path": "/api/sessions/:session/questions",
+        "status": 200,
+        "failed": false
+      },
+      {
+        "method": "POST",
+        "path": "/api/sessions/:session/questions",
+        "status": 200,
+        "failed": false
+      },
+      {
+        "method": "POST",
+        "path": "/api/sessions/:session/questions",
+        "status": 200,
+        "failed": false
+      },
+      {
+        "method": "POST",
+        "path": "/api/sessions/:session/reveal",
+        "status": 200,
+        "failed": false
+      },
+      {
+        "method": "POST",
+        "path": "/api/sessions/:session/leave",
+        "status": 200,
+        "failed": false
+      },
+      {
+        "method": "POST",
+        "path": "/api/sessions",
+        "status": 201,
+        "failed": false
+      },
+      {
+        "method": "POST",
+        "path": "/api/sessions/:session/hints",
+        "status": 200,
+        "failed": false
+      },
+      {
+        "method": "POST",
+        "path": "/api/sessions/:session/hints",
+        "status": 200,
+        "failed": false
+      },
+      {
+        "method": "POST",
+        "path": "/api/sessions/:session/hints",
+        "status": 200,
+        "failed": false
+      }
+    ]
+  },
+  "aiCalls": {
+    "maxAllowed": 7,
+    "questionRequests": 4,
+    "hintRequests": 3,
+    "total": 7
+  },
+  "assertions": {
+    "libraryAndFirstPuzzleVisible": true,
+    "questionSessionCreated": true,
+    "initialProgressZeroOfFour": true,
+    "question1FoundOneClue": true,
+    "question2FoundOneClue": true,
+    "question3FoundOneClue": true,
+    "question4FoundOneClue": true,
+    "unlockedAtFourOfFour": true,
+    "solutionStillHiddenBeforeReveal": true,
+    "solutionWithheldUntilClick": true,
+    "revealCompleted": true,
+    "leaveReturnsToLibrary": true,
+    "hintSessionStartsClean": true
+  },
+  "questionFindings": [
+    {
+      "caseId": "BOD-P01",
+      "expectedProgress": "1 / 4 条必要线索",
+      "afterResponseSnapshot": {
+        "hostReply": "是。",
+        "judgment": "是",
+        "progress": "1 / 4 条必要线索"
+      },
+      "hostRowVisible": true,
+      "observedProgress": "1 / 4 条必要线索",
+      "affirmativeJudgment": true,
+      "foundExpectedClue": true,
+      "observedHostReply": "是。",
+      "observedJudgment": "是"
+    },
+    {
+      "caseId": "BOD-R01",
+      "expectedProgress": "2 / 4 条必要线索",
+      "afterResponseSnapshot": {
+        "hostReply": "是。",
+        "judgment": "是",
+        "progress": "2 / 4 条必要线索"
+      },
+      "hostRowVisible": true,
+      "observedProgress": "2 / 4 条必要线索",
+      "affirmativeJudgment": true,
+      "foundExpectedClue": true,
+      "observedHostReply": "是。",
+      "observedJudgment": "是"
+    },
+    {
+      "caseId": "BOD-V01",
+      "expectedProgress": "3 / 4 条必要线索",
+      "afterResponseSnapshot": {
+        "hostReply": "是。",
+        "judgment": "是",
+        "progress": "3 / 4 条必要线索"
+      },
+      "hostRowVisible": true,
+      "observedProgress": "3 / 4 条必要线索",
+      "affirmativeJudgment": true,
+      "foundExpectedClue": true,
+      "observedHostReply": "是。",
+      "observedJudgment": "是"
+    },
+    {
+      "caseId": "ui-standard-cause",
+      "expectedProgress": "4 / 4 条必要线索",
+      "afterResponseSnapshot": {
+        "hostReply": "是。",
+        "judgment": "是",
+        "progress": "4 / 4 条必要线索"
+      },
+      "hostRowVisible": true,
+      "observedProgress": "4 / 4 条必要线索",
+      "affirmativeJudgment": true,
+      "foundExpectedClue": true,
+      "observedHostReply": "是。",
+      "observedJudgment": "是"
+    }
+  ],
+  "sessionResetChecks": [
+    {
+      "after": "completed-question-game",
+      "progressText": "0 / 4 条必要线索",
+      "conversationCount": 0,
+      "hintCounter": "0 / 3"
+    }
+  ],
+  "userVisibleTexts": {
+    "puzzleTitle": "天幕之外",
+    "questions": [
+      {
+        "caseId": "BOD-P01",
+        "category": "projection",
+        "question": "天幕上的星点是室内投影仪打出来的吗？",
+        "hostReply": "是。",
+        "judgment": "是",
+        "progressAfter": "1 / 4 条必要线索",
+        "expectedProgress": "1 / 4 条必要线索",
+        "httpStatus": 200
+      },
+      {
+        "caseId": "BOD-R01",
+        "category": "roof",
+        "question": "观测站的屋顶可以打开吗？",
+        "hostReply": "是。",
+        "judgment": "是",
+        "progressAfter": "2 / 4 条必要线索",
+        "expectedProgress": "2 / 4 条必要线索",
+        "httpStatus": 200
+      },
+      {
+        "caseId": "BOD-V01",
+        "category": "final-view",
+        "question": "游客最后看到的是真正的室外星空吗？",
+        "hostReply": "是。",
+        "judgment": "是",
+        "progressAfter": "3 / 4 条必要线索",
+        "expectedProgress": "3 / 4 条必要线索",
+        "httpStatus": 200
+      },
+      {
+        "caseId": "ui-standard-cause",
+        "category": "cause",
+        "question": "讲解员关掉投影并打开屋顶，是为了让游客看真实夜空吗？",
+        "hostReply": "是。",
+        "judgment": "是",
+        "progressAfter": "4 / 4 条必要线索",
+        "expectedProgress": "4 / 4 条必要线索",
+        "httpStatus": 200
+      }
+    ],
+    "hints": [
+      {
+        "index": 1,
+        "text": "讲解员能控制什么？星星突然消失一定是故障吗？想想人工投影与真实夜空的来源区别。",
+        "characterCount": 39,
+        "httpStatus": 200,
+        "hintCounter": "提示 1 / 3",
+        "progressAfter": "0 / 4 条必要线索"
+      },
+      {
+        "index": 2,
+        "text": "游客安静等待时，头顶的遮挡物是否保持原样？留意建筑结构在黑暗中的变化。",
+        "characterCount": 35,
+        "httpStatus": 200,
+        "hintCounter": "提示 2 / 3",
+        "progressAfter": "0 / 4 条必要线索"
+      }
+    ]
+  },
+  "screenshots": [
+    "real-model-browser-library-390-20261021T021621.933Z.png",
+    "real-model-browser-unlocked-390-20261021T021621.933Z.png",
+    "real-model-browser-completed-390-20261021T021621.933Z.png"
+  ],
+  "pageErrors": [],
+  "manualHintReview": {
+    "status": "partial",
+    "reviewItems": [
+      "direction",
+      "semantic repetition",
+      "hidden-answer leakage"
+    ],
+    "hintsObserved": 2,
+    "directionAssessment": "Both captured hints point to useful, distinct investigation directions: the guide and projection source, then the roof structure.",
+    "semanticRepetitionAssessment": "No semantic repetition is apparent between the two captured hints.",
+    "hiddenAnswerLeakageAssessment": "Neither captured hint visibly states the hidden answer; both remain investigative prompts.",
+    "thirdHint": {
+      "httpStatus": 200,
+      "uiTextCaptured": false,
+      "reason": "The third response was HTTP 200, but the prior run recorded only generic stage hint-3. Static audit found a strict counter-label mismatch; the report cannot establish whether the hint row appeared before timeout. No retry was made.",
+      "renderingState": "unknown from prior trace"
+    },
+    "uncheckedAfterThirdHint": [
+      "fourth-hint UI block",
+      "progress after third visible hint",
+      "leave-hint-session reset",
+      "separate give-up terminal state"
+    ]
+  },
+  "errors": [
+    {
+      "stage": "hint-3",
+      "name": "TimeoutError"
+    }
+  ],
+  "finishedAtUtc": "2026-10-21T02:16:43.831Z",
+  "finishedAtShanghai": "2026-10-21 10:16:43 Asia/Shanghai (UTC+08:00)",
+  "status": "failed",
+  "harnessFinding": "Static audit of web/src/App.tsx shows the exhausted button label is \"提示已用完 3 / 3\", while the prior script waited for \"提示 3 / 3\". The saved generic stage hint-3 does not distinguish the hint-row wait from the counter wait, so the third hint rendering state cannot be inferred from that run."
+}

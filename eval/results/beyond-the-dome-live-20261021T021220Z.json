@@ -1,0 +1,256 @@
+{
+  "schemaVersion": 1,
+  "mode": "live",
+  "createdAt": "2026-10-21T02:12:20.776Z",
+  "puzzleId": "beyond-the-dome",
+  "puzzleVersion": "1.0.0",
+  "model": "qwen3.8-flash",
+  "promptVersion": "qa-v5",
+  "split": "holdout",
+  "rounds": 1,
+  "selectedCaseCount": 5,
+  "records": [
+    {
+      "caseId": "BOD-P02",
+      "split": "holdout",
+      "category": "clue-positive",
+      "round": 1,
+      "model": "qwen3.8-flash",
+      "contentVersion": "1.0.0",
+      "promptVersion": "qa-v5",
+      "action": {
+        "type": "question",
+        "text": "穹顶上那片星图是放映设备投出来的影像吗？"
+      },
+      "history": [],
+      "expected": {
+        "judgment": "yes",
+        "addedClueIds": [
+          "projected-sky"
+        ],
+        "status": "playing",
+        "hintsUsedDelta": 0
+      },
+      "usage": {
+        "prompt_tokens": 2255,
+        "completion_tokens": 51,
+        "total_tokens": 2306
+      },
+      "usageNote": "Token counts are recorded only when the provider includes standard usage fields in its completion response.",
+      "manualLeakageReviewRequired": false,
+      "actual": {
+        "judgment": "yes",
+        "addedClueIds": [
+          "projected-sky"
+        ],
+        "status": "playing",
+        "hintsUsedDelta": 0,
+        "userVisibleText": "天幕之外\n郊外观测站的夜场里，讲解员忽然把满天星星关掉。屋里一下漆黑，游客没有抱怨，反而安静地等了片刻。\n室内天幕上的星图由投影仪产生。\n是。"
+      },
+      "elapsedMs": 1275.73,
+      "outcome": "matched",
+      "forbiddenTextFindings": []
+    },
+    {
+      "caseId": "BOD-R02",
+      "split": "holdout",
+      "category": "clue-positive",
+      "round": 1,
+      "model": "qwen3.8-flash",
+      "contentVersion": "1.0.0",
+      "promptVersion": "qa-v5",
+      "action": {
+        "type": "question",
+        "text": "观测室上方的顶棚可以开启吗？"
+      },
+      "history": [],
+      "expected": {
+        "judgment": "yes",
+        "addedClueIds": [
+          "openable-roof"
+        ],
+        "status": "playing",
+        "hintsUsedDelta": 0
+      },
+      "usage": {
+        "prompt_tokens": 2251,
+        "completion_tokens": 47,
+        "total_tokens": 2298
+      },
+      "usageNote": "Token counts are recorded only when the provider includes standard usage fields in its completion response.",
+      "manualLeakageReviewRequired": false,
+      "actual": {
+        "judgment": "yes",
+        "addedClueIds": [
+          "openable-roof"
+        ],
+        "status": "playing",
+        "hintsUsedDelta": 0,
+        "userVisibleText": "天幕之外\n郊外观测站的夜场里，讲解员忽然把满天星星关掉。屋里一下漆黑，游客没有抱怨，反而安静地等了片刻。\n观测站的屋顶可以打开。\n是。"
+      },
+      "elapsedMs": 1256.78,
+      "outcome": "matched",
+      "forbiddenTextFindings": []
+    },
+    {
+      "caseId": "BOD-V02",
+      "split": "holdout",
+      "category": "clue-positive",
+      "round": 1,
+      "model": "qwen3.8-flash",
+      "contentVersion": "1.0.0",
+      "promptVersion": "qa-v5",
+      "action": {
+        "type": "question",
+        "text": "等候结束后，游客确实透过头顶看到了自然的星海吗？"
+      },
+      "history": [],
+      "expected": {
+        "judgment": "yes",
+        "addedClueIds": [
+          "visitors-saw-real-sky"
+        ],
+        "status": "playing",
+        "hintsUsedDelta": 0
+      },
+      "usage": {
+        "prompt_tokens": 2255,
+        "completion_tokens": 54,
+        "total_tokens": 2309
+      },
+      "usageNote": "Token counts are recorded only when the provider includes standard usage fields in its completion response.",
+      "manualLeakageReviewRequired": false,
+      "actual": {
+        "judgment": "yes",
+        "addedClueIds": [
+          "visitors-saw-real-sky"
+        ],
+        "status": "playing",
+        "hintsUsedDelta": 0,
+        "userVisibleText": "天幕之外\n郊外观测站的夜场里，讲解员忽然把满天星星关掉。屋里一下漆黑，游客没有抱怨，反而安静地等了片刻。\n游客最后看到了真实星空。\n是。"
+      },
+      "elapsedMs": 1400.12,
+      "outcome": "matched",
+      "forbiddenTextFindings": []
+    },
+    {
+      "caseId": "BOD-C01",
+      "split": "holdout",
+      "category": "causality",
+      "round": 1,
+      "model": "qwen3.8-flash",
+      "contentVersion": "1.0.0",
+      "promptVersion": "qa-v5",
+      "action": {
+        "type": "question",
+        "text": "关掉投影就是为了让游客看真实星空吗？"
+      },
+      "history": [
+        {
+          "role": "player",
+          "text": "天幕上的星图来自室内投影仪。"
+        },
+        {
+          "role": "host",
+          "text": "是。",
+          "judgment": "yes"
+        },
+        {
+          "role": "player",
+          "text": "观测站屋顶可以打开。"
+        },
+        {
+          "role": "host",
+          "text": "是。",
+          "judgment": "yes"
+        }
+      ],
+      "expected": {
+        "judgment": "yes",
+        "addedClueIds": [
+          "switch-to-real-sky"
+        ],
+        "status": "playing",
+        "hintsUsedDelta": 0
+      },
+      "usage": {
+        "prompt_tokens": 2474,
+        "completion_tokens": 11,
+        "total_tokens": 2485
+      },
+      "usageNote": "Token counts are recorded only when the provider includes standard usage fields in its completion response.",
+      "manualLeakageReviewRequired": false,
+      "actual": {
+        "judgment": "unknown",
+        "addedClueIds": [],
+        "status": "playing",
+        "hintsUsedDelta": 0,
+        "userVisibleText": "天幕之外\n郊外观测站的夜场里，讲解员忽然把满天星星关掉。屋里一下漆黑，游客没有抱怨，反而安静地等了片刻。\n室内天幕上的星图由投影仪产生。\n观测站的屋顶可以打开。\n是。\n是。\n故事未交代，无法确定。"
+      },
+      "elapsedMs": 470.45,
+      "outcome": "mismatch",
+      "forbiddenTextFindings": []
+    },
+    {
+      "caseId": "BOD-X02",
+      "split": "holdout",
+      "category": "causality",
+      "round": 1,
+      "model": "qwen3.8-flash",
+      "contentVersion": "1.0.0",
+      "promptVersion": "qa-v5",
+      "action": {
+        "type": "question",
+        "text": "关掉投影是为了让游客看见真星空吗？"
+      },
+      "history": [
+        {
+          "role": "player",
+          "text": "天幕星图来自投影仪。"
+        },
+        {
+          "role": "host",
+          "text": "是。",
+          "judgment": "yes"
+        },
+        {
+          "role": "player",
+          "text": "屋顶已经打开了吗？"
+        },
+        {
+          "role": "host",
+          "text": "是。",
+          "judgment": "yes"
+        }
+      ],
+      "expected": {
+        "judgment": "yes",
+        "addedClueIds": [
+          "switch-to-real-sky"
+        ],
+        "status": "playing",
+        "hintsUsedDelta": 0
+      },
+      "usage": {
+        "prompt_tokens": 2471,
+        "completion_tokens": 70,
+        "total_tokens": 2541
+      },
+      "usageNote": "Token counts are recorded only when the provider includes standard usage fields in its completion response.",
+      "manualLeakageReviewRequired": false,
+      "actual": {
+        "judgment": "yes",
+        "addedClueIds": [
+          "switch-to-real-sky"
+        ],
+        "status": "playing",
+        "hintsUsedDelta": 0,
+        "userVisibleText": "天幕之外\n郊外观测站的夜场里，讲解员忽然把满天星星关掉。屋里一下漆黑，游客没有抱怨，反而安静地等了片刻。\n室内天幕上的星图由投影仪产生。\n观测站的屋顶可以打开。\n关闭人工投影并打开屋顶，是为了让游客观看真实星空。\n是。\n是。\n是。"
+      },
+      "elapsedMs": 1427.49,
+      "outcome": "matched",
+      "forbiddenTextFindings": []
+    }
+  ],
+  "note": "Live adapter calls are real model calls. Forbidden-text checks are supplemental only and require human leakage review."
+}

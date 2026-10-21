@@ -1,0 +1,563 @@
+{
+  "schemaVersion": 1,
+  "mode": "thinking",
+  "experiment": "thinking-disabled-vs-enabled-low",
+  "executionStatus": "completed",
+  "createdAt": "2026-10-21T02:30:30.133Z",
+  "startedAt": "2026-10-21T02:27:47.078Z",
+  "finishedAt": "2026-10-21T02:30:30.133Z",
+  "model": "qwen3.8-flash",
+  "promptVersion": "qa-v5",
+  "contentVersion": "1.0.0",
+  "thinking": "varies by condition",
+  "temperature": "omitted in both conditions",
+  "budget": 2048,
+  "timeoutMs": 30000,
+  "rounds": 2,
+  "selectedCaseIds": [
+    "BOD-C01",
+    "BOD-C02",
+    "BOD-C07"
+  ],
+  "requestCount": 12,
+  "maxCalls": 12,
+  "conditions": {
+    "thinking_disabled": {
+      "temperature": "omitted",
+      "enable_thinking": false
+    },
+    "thinking_enabled_low": {
+      "temperature": "omitted",
+      "enable_thinking": true,
+      "reasoning_effort": "low"
+    }
+  },
+  "officialSource": {
+    "url": "https://www.alibabacloud.com/help/en/model-studio/qwen-api-via-openai-chat-completions",
+    "temperatureRange": "[0, 2)",
+    "parameterConstraint": "temperature and top_p are alternatives; both thinking conditions omit them."
+  },
+  "results": [
+    {
+      "caseId": "BOD-C01",
+      "condition": "thinking_disabled",
+      "round": 1,
+      "outcome": "mismatch",
+      "strictOutputValidated": true,
+      "expected": {
+        "judgment": "yes",
+        "addedClueIds": [
+          "switch-to-real-sky"
+        ],
+        "status": "playing"
+      },
+      "judgment": "no",
+      "addedClueIds": [],
+      "status": "playing",
+      "errorCode": null,
+      "elapsedMs": 916.65,
+      "httpStatus": 200,
+      "requestElapsedMs": 915.34,
+      "requestParameters": {
+        "model": "qwen3.8-flash",
+        "max_completion_tokens": 2048,
+        "enable_thinking": false
+      },
+      "truncated": false,
+      "emptyContent": false,
+      "usage": {
+        "prompt_tokens": 2474,
+        "completion_tokens": 11,
+        "total_tokens": 2485
+      }
+    },
+    {
+      "caseId": "BOD-C01",
+      "condition": "thinking_enabled_low",
+      "round": 1,
+      "outcome": "error",
+      "strictOutputValidated": false,
+      "expected": {
+        "judgment": "yes",
+        "addedClueIds": [
+          "switch-to-real-sky"
+        ],
+        "status": "playing"
+      },
+      "judgment": null,
+      "addedClueIds": [],
+      "status": null,
+      "errorCode": "AI_TIMEOUT",
+      "elapsedMs": 30010.84,
+      "httpStatus": null,
+      "requestElapsedMs": 30010.51,
+      "requestParameters": {
+        "model": "qwen3.8-flash",
+        "max_completion_tokens": 2048,
+        "enable_thinking": true,
+        "reasoning_effort": "low"
+      },
+      "truncated": null,
+      "emptyContent": null,
+      "usage": null
+    },
+    {
+      "caseId": "BOD-C01",
+      "condition": "thinking_enabled_low",
+      "round": 2,
+      "outcome": "error",
+      "strictOutputValidated": false,
+      "expected": {
+        "judgment": "yes",
+        "addedClueIds": [
+          "switch-to-real-sky"
+        ],
+        "status": "playing"
+      },
+      "judgment": null,
+      "addedClueIds": [],
+      "status": null,
+      "errorCode": "AI_TIMEOUT",
+      "elapsedMs": 30007.42,
+      "httpStatus": null,
+      "requestElapsedMs": 30006.91,
+      "requestParameters": {
+        "model": "qwen3.8-flash",
+        "max_completion_tokens": 2048,
+        "enable_thinking": true,
+        "reasoning_effort": "low"
+      },
+      "truncated": null,
+      "emptyContent": null,
+      "usage": null
+    },
+    {
+      "caseId": "BOD-C01",
+      "condition": "thinking_disabled",
+      "round": 2,
+      "outcome": "mismatch",
+      "strictOutputValidated": true,
+      "expected": {
+        "judgment": "yes",
+        "addedClueIds": [
+          "switch-to-real-sky"
+        ],
+        "status": "playing"
+      },
+      "judgment": "no",
+      "addedClueIds": [],
+      "status": "playing",
+      "errorCode": null,
+      "elapsedMs": 805.52,
+      "httpStatus": 200,
+      "requestElapsedMs": 805.07,
+      "requestParameters": {
+        "model": "qwen3.8-flash",
+        "max_completion_tokens": 2048,
+        "enable_thinking": false
+      },
+      "truncated": false,
+      "emptyContent": false,
+      "usage": {
+        "prompt_tokens": 2474,
+        "completion_tokens": 11,
+        "total_tokens": 2485
+      }
+    },
+    {
+      "caseId": "BOD-C02",
+      "condition": "thinking_disabled",
+      "round": 1,
+      "outcome": "matched",
+      "strictOutputValidated": true,
+      "expected": {
+        "judgment": "yes",
+        "addedClueIds": [
+          "projected-sky",
+          "openable-roof",
+          "visitors-saw-real-sky",
+          "switch-to-real-sky"
+        ],
+        "status": "unlocked"
+      },
+      "judgment": "yes",
+      "addedClueIds": [
+        "projected-sky",
+        "openable-roof",
+        "visitors-saw-real-sky",
+        "switch-to-real-sky"
+      ],
+      "status": "unlocked",
+      "errorCode": null,
+      "elapsedMs": 3301.18,
+      "httpStatus": 200,
+      "requestElapsedMs": 3300.15,
+      "requestParameters": {
+        "model": "qwen3.8-flash",
+        "max_completion_tokens": 2048,
+        "enable_thinking": false
+      },
+      "truncated": false,
+      "emptyContent": false,
+      "usage": {
+        "prompt_tokens": 2274,
+        "completion_tokens": 243,
+        "total_tokens": 2517
+      }
+    },
+    {
+      "caseId": "BOD-C02",
+      "condition": "thinking_enabled_low",
+      "round": 1,
+      "outcome": "matched",
+      "strictOutputValidated": true,
+      "expected": {
+        "judgment": "yes",
+        "addedClueIds": [
+          "projected-sky",
+          "openable-roof",
+          "visitors-saw-real-sky",
+          "switch-to-real-sky"
+        ],
+        "status": "unlocked"
+      },
+      "judgment": "yes",
+      "addedClueIds": [
+        "projected-sky",
+        "openable-roof",
+        "visitors-saw-real-sky",
+        "switch-to-real-sky"
+      ],
+      "status": "unlocked",
+      "errorCode": null,
+      "elapsedMs": 13680.37,
+      "httpStatus": 200,
+      "requestElapsedMs": 13679.91,
+      "requestParameters": {
+        "model": "qwen3.8-flash",
+        "max_completion_tokens": 2048,
+        "enable_thinking": true,
+        "reasoning_effort": "low"
+      },
+      "truncated": false,
+      "emptyContent": false,
+      "usage": {
+        "prompt_tokens": 2298,
+        "completion_tokens": 720,
+        "total_tokens": 3018
+      }
+    },
+    {
+      "caseId": "BOD-C02",
+      "condition": "thinking_enabled_low",
+      "round": 2,
+      "outcome": "matched",
+      "strictOutputValidated": true,
+      "expected": {
+        "judgment": "yes",
+        "addedClueIds": [
+          "projected-sky",
+          "openable-roof",
+          "visitors-saw-real-sky",
+          "switch-to-real-sky"
+        ],
+        "status": "unlocked"
+      },
+      "judgment": "yes",
+      "addedClueIds": [
+        "projected-sky",
+        "openable-roof",
+        "visitors-saw-real-sky",
+        "switch-to-real-sky"
+      ],
+      "status": "unlocked",
+      "errorCode": null,
+      "elapsedMs": 19323.69,
+      "httpStatus": 200,
+      "requestElapsedMs": 19323.17,
+      "requestParameters": {
+        "model": "qwen3.8-flash",
+        "max_completion_tokens": 2048,
+        "enable_thinking": true,
+        "reasoning_effort": "low"
+      },
+      "truncated": false,
+      "emptyContent": false,
+      "usage": {
+        "prompt_tokens": 2298,
+        "completion_tokens": 909,
+        "total_tokens": 3207
+      }
+    },
+    {
+      "caseId": "BOD-C02",
+      "condition": "thinking_disabled",
+      "round": 2,
+      "outcome": "matched",
+      "strictOutputValidated": true,
+      "expected": {
+        "judgment": "yes",
+        "addedClueIds": [
+          "projected-sky",
+          "openable-roof",
+          "visitors-saw-real-sky",
+          "switch-to-real-sky"
+        ],
+        "status": "unlocked"
+      },
+      "judgment": "yes",
+      "addedClueIds": [
+        "projected-sky",
+        "openable-roof",
+        "visitors-saw-real-sky",
+        "switch-to-real-sky"
+      ],
+      "status": "unlocked",
+      "errorCode": null,
+      "elapsedMs": 2458.69,
+      "httpStatus": 200,
+      "requestElapsedMs": 2458.3,
+      "requestParameters": {
+        "model": "qwen3.8-flash",
+        "max_completion_tokens": 2048,
+        "enable_thinking": false
+      },
+      "truncated": false,
+      "emptyContent": false,
+      "usage": {
+        "prompt_tokens": 2274,
+        "completion_tokens": 158,
+        "total_tokens": 2432
+      }
+    },
+    {
+      "caseId": "BOD-C07",
+      "condition": "thinking_disabled",
+      "round": 1,
+      "outcome": "matched",
+      "strictOutputValidated": true,
+      "expected": {
+        "judgment": "yes",
+        "addedClueIds": [],
+        "status": "playing"
+      },
+      "judgment": "yes",
+      "addedClueIds": [],
+      "status": "playing",
+      "errorCode": null,
+      "elapsedMs": 1807.07,
+      "httpStatus": 200,
+      "requestElapsedMs": 1806.68,
+      "requestParameters": {
+        "model": "qwen3.8-flash",
+        "max_completion_tokens": 2048,
+        "enable_thinking": false
+      },
+      "truncated": false,
+      "emptyContent": false,
+      "usage": {
+        "prompt_tokens": 2594,
+        "completion_tokens": 106,
+        "total_tokens": 2700
+      }
+    },
+    {
+      "caseId": "BOD-C07",
+      "condition": "thinking_enabled_low",
+      "round": 1,
+      "outcome": "error",
+      "strictOutputValidated": false,
+      "expected": {
+        "judgment": "yes",
+        "addedClueIds": [],
+        "status": "playing"
+      },
+      "judgment": null,
+      "addedClueIds": [],
+      "status": null,
+      "errorCode": "AI_TIMEOUT",
+      "elapsedMs": 30015.48,
+      "httpStatus": null,
+      "requestElapsedMs": 30015.18,
+      "requestParameters": {
+        "model": "qwen3.8-flash",
+        "max_completion_tokens": 2048,
+        "enable_thinking": true,
+        "reasoning_effort": "low"
+      },
+      "truncated": null,
+      "emptyContent": null,
+      "usage": null
+    },
+    {
+      "caseId": "BOD-C07",
+      "condition": "thinking_enabled_low",
+      "round": 2,
+      "outcome": "error",
+      "strictOutputValidated": false,
+      "expected": {
+        "judgment": "yes",
+        "addedClueIds": [],
+        "status": "playing"
+      },
+      "judgment": null,
+      "addedClueIds": [],
+      "status": null,
+      "errorCode": "AI_TIMEOUT",
+      "elapsedMs": 30005.66,
+      "httpStatus": null,
+      "requestElapsedMs": 30004.47,
+      "requestParameters": {
+        "model": "qwen3.8-flash",
+        "max_completion_tokens": 2048,
+        "enable_thinking": true,
+        "reasoning_effort": "low"
+      },
+      "truncated": null,
+      "emptyContent": null,
+      "usage": null
+    },
+    {
+      "caseId": "BOD-C07",
+      "condition": "thinking_disabled",
+      "round": 2,
+      "outcome": "matched",
+      "strictOutputValidated": true,
+      "expected": {
+        "judgment": "yes",
+        "addedClueIds": [],
+        "status": "playing"
+      },
+      "judgment": "yes",
+      "addedClueIds": [],
+      "status": "playing",
+      "errorCode": null,
+      "elapsedMs": 720.04,
+      "httpStatus": 200,
+      "requestElapsedMs": 719.78,
+      "requestParameters": {
+        "model": "qwen3.8-flash",
+        "max_completion_tokens": 2048,
+        "enable_thinking": false
+      },
+      "truncated": false,
+      "emptyContent": false,
+      "usage": {
+        "prompt_tokens": 2594,
+        "completion_tokens": 11,
+        "total_tokens": 2605
+      }
+    }
+  ],
+  "summary": {
+    "executions": 12,
+    "counts": {
+      "matched": 6,
+      "mismatch": 2,
+      "error": 4
+    },
+    "conditions": {
+      "thinking_disabled": {
+        "executions": 6,
+        "counts": {
+          "matched": 4,
+          "mismatch": 2,
+          "error": 0
+        },
+        "matchRate": 0.6666666666666666,
+        "judgmentCorrect": 4,
+        "judgmentTotal": 6,
+        "errorCounts": {
+          "timeouts": 0,
+          "invalidModelOutput": 0,
+          "truncatedOutputs": 0,
+          "emptyOutputs": 0,
+          "other": 0
+        },
+        "usageTotals": {
+          "prompt_tokens": {
+            "total": 14684,
+            "observations": 6
+          },
+          "completion_tokens": {
+            "total": 540,
+            "observations": 6
+          },
+          "total_tokens": {
+            "total": 15224,
+            "observations": 6
+          }
+        }
+      },
+      "thinking_enabled_low": {
+        "executions": 6,
+        "counts": {
+          "matched": 2,
+          "mismatch": 0,
+          "error": 4
+        },
+        "matchRate": 0.3333333333333333,
+        "judgmentCorrect": 2,
+        "judgmentTotal": 6,
+        "errorCounts": {
+          "timeouts": 4,
+          "invalidModelOutput": 0,
+          "truncatedOutputs": 0,
+          "emptyOutputs": 0,
+          "other": 0
+        },
+        "usageTotals": {
+          "prompt_tokens": {
+            "total": null,
+            "observations": 2
+          },
+          "completion_tokens": {
+            "total": null,
+            "observations": 2
+          },
+          "total_tokens": {
+            "total": null,
+            "observations": 2
+          }
+        }
+      }
+    },
+    "paired": [
+      {
+        "caseId": "BOD-C01",
+        "round": 1,
+        "equivalentResult": false
+      },
+      {
+        "caseId": "BOD-C01",
+        "round": 2,
+        "equivalentResult": false
+      },
+      {
+        "caseId": "BOD-C02",
+        "round": 1,
+        "equivalentResult": true
+      },
+      {
+        "caseId": "BOD-C02",
+        "round": 2,
+        "equivalentResult": true
+      },
+      {
+        "caseId": "BOD-C07",
+        "round": 1,
+        "equivalentResult": false
+      },
+      {
+        "caseId": "BOD-C07",
+        "round": 2,
+        "equivalentResult": false
+      }
+    ]
+  },
+  "limitations": [
+    "Both conditions omit temperature and top_p, so the provider default remains unpinned.",
+    "The enabled condition requests reasoning_effort=low with the same 2048 completion budget; truncation, empty output, invalid output, and timeout remain failures.",
+    "This two-round comparison over three fixed regression cases does not establish absolute reproducibility or general model quality."
+  ]
+}

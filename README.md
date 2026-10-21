@@ -2,7 +2,9 @@
 
 本项目包含 React/Vite 客户端和 Node/Express API。API 在服务端加载 `content/puzzles/*.json`，临时会话只保存在内存中；重启服务会清空当前会话。
 
-当前是单题工程基线：Web与Android调试构建通过，真实Qwen qa-v2问答回归为23/29，尚未达到语义验收门槛。第二题仅有草案，五题MVP与真机验收仍在推进。原始结果、失败与后续改进记录见[AI评测](docs/AI_EVALUATION.md)，整体进度见[项目状态](docs/PROJECT_STATUS.md)。
+当前是单题工程原型：Web与Android调试构建通过；qa-v5原30条真实Qwen回归全匹配，但首次保留用例4/5，上下文因果漏收仍未通过验收。完整明确表达的真实Web通关、三次提示上限与放弃流程已有记录。第二题仅有草案，五题MVP与真机验收仍在推进。结果与失败见[AI评测](docs/AI_EVALUATION.md)，整体进度见[项目状态](docs/PROJECT_STATUS.md)。
+
+已审定的分阶段路径收录在[开发路径V1.1](docs/DEVELOPMENT_PATH.md)；它是需求与策略快照，不能作为阶段已经完成的证明。
 
 ## 开发
 

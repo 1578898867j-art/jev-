@@ -2,14 +2,14 @@
 
 ## 项目目标
 
-依据 `D:/下载/plans/ai-turtle-soup-mvp-development-path-2026-10-20.md` V1.1 推进：一题核心闭环、第二题迁移、五题 Android MVP、真实评测与作品集。需求原文在用户本次附件中。
+依据 `docs/DEVELOPMENT_PATH.md` V1.1 推进：一题核心闭环、第二题迁移、五题 Android MVP、真实评测与作品集。该文件保留2026-10-20路径决策快照，当前实现和验证状态以`docs/PROJECT_STATUS.md`为准。
 
 ## 总控与模型
 
 - 当前主会话负责全局范围、任务台账、分工、依赖与验收。
 - 用户指定：决策、架构、评审智能体 `gpt-6.1-sol`，reasoning `max`。
 - 用户指定：实现、内容制作、测试执行智能体 `gpt-6-luna`，reasoning `max`。
-- 模型不可用时如实报告，不静默换模型。以上是开发智能体设置，不代表产品 AI 供应商已选定。
+- 模型不可用时如实报告，不静默换模型。以上是开发智能体设置，产品 AI 配置另见`.env.example`与`docs/QWEN_INTEGRATION_DECISION.md`。
 - 多人共享工作区。只修改明确分配的目录，不回退其他人的改动。主控负责共享接口与依赖文件的写入归属。
 
 ## 范围与正确性

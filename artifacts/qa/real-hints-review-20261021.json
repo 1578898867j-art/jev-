@@ -1,0 +1,25 @@
+{
+  "reviewedAt": "2026-10-21T02:26:16.306Z",
+  "reviewer": "Main coordinating agent semantic review",
+  "source": "artifacts/qa/real-hints-browser-run-20261021T022515.105Z.json",
+  "sourceSha256": "694fa9d5560390967578b01629cfb5c4dbbfedf692541aaaf9daeef2eb05759e",
+  "outcome": "passed-for-this-observed-run",
+  "checks": {
+    "threeVisibleHints": true,
+    "differentDirections": [
+      "display source",
+      "overhead structure",
+      "actual viewing outcome"
+    ],
+    "noSemanticRepeatObserved": true,
+    "noCompleteClueOrSolutionDisclosed": true,
+    "hintsDoNotAdvanceProgress": true,
+    "fourthDisabledWithoutModelCall": true,
+    "newSessionClear": true,
+    "giveUpSeparate": true
+  },
+  "limitations": [
+    "One empty-context hint session only; does not prove adaptive quality in all histories or absence of leakage on open inputs.",
+    "This review does not resolve the BOD-C01 contextual-cause miss."
+  ]
+}
