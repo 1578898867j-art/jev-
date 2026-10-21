@@ -35,4 +35,4 @@ CI 上传的 `web-dist` artifact 只包含 Vite 生成的静态前端文件，�
 
 [`.github/workflows/verify.yml`](../.github/workflows/verify.yml) 在 push 和 pull request 上使用 Linux 与 Node.js 24，按顺序运行 `npm ci`、`npm test`、`npm run build` 和 `npm run eval:validate`，然后上传 `web/dist`。工作流仅申请 `contents: read` 权限，不配置模型密钥，也不会发出真实模型请求。
 
-当前本地实现尚未产生 GitHub Actions 运行记录；工作流需在代码推送到 GitHub 后才会执行。该文档说明的是 CI 配置与本地验收范围，不代表远端 CI 已通过。
+qa-v2 基线推送后，GitHub Actions 已完成一次成功验证：[查看运行记录](https://github.com/1578898867j-art/jev-/actions/runs/39530358770)。该运行验证的是对应提交的 Web CI 配置与构建流程；后续提交会分别触发新的运行。
