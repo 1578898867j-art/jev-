@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "mode": "live",
+  "createdAt": "2026-10-20T04:48:37.342Z",
+  "puzzleId": "beyond-the-dome",
+  "puzzleVersion": "1.0.0",
+  "model": null,
+  "promptVersion": "qa-v1+hint-v1",
+  "split": "regression",
+  "rounds": 1,
+  "selectedCaseCount": 30,
+  "records": [],
+  "note": "Live adapter calls are real model calls. Forbidden-text checks are supplemental only and require human leakage review.",
+  "blocked": "AI_NOT_CONFIGURED: set AI_BASE_URL, AI_MODEL, and AI_API_KEY before using --live."
+}

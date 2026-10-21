@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-20T07:41:17.224Z",
+  "operation": "User requested Qwen availability diagnostic",
+  "model": "qwen3.8-flash",
+  "status": 200,
+  "errorCode": null,
+  "errorType": null,
+  "message": null,
+  "finishReason": "stop",
+  "hasContent": true,
+  "expectedJson": true,
+  "usage": {
+    "prompt_tokens": 69,
+    "completion_tokens": 51,
+    "total_tokens": 120
+  }
+}

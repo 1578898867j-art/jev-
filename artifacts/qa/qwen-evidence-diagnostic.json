@@ -1,0 +1,50 @@
+{
+  "at": "2026-10-20T10:09:44.192Z",
+  "model": "qwen3.8-flash",
+  "promptVersion": "qa-v1",
+  "caseId": "BOD-P01",
+  "outcome": "error",
+  "errorCode": "INVALID_MODEL_OUTPUT",
+  "observed": {
+    "httpStatus": 200,
+    "currentMessage": {
+      "id": "BOD-P01:current",
+      "text": "天幕上的星点是室内投影仪打出来的吗？"
+    },
+    "contentJson": {
+      "judgment": "yes",
+      "clueCandidates": [
+        {
+          "id": "projected-sky",
+          "evidence": [
+            {
+              "messageId": "BOD-P01:current",
+              "quote": "天幕上的星点是室内投影仪打出来的吗？"
+            }
+          ]
+        }
+      ]
+    },
+    "schemaValid": false,
+    "schemaIssues": [
+      {
+        "path": [
+          "clueCandidates",
+          0,
+          "clueId"
+        ],
+        "code": "invalid_type",
+        "message": "Invalid input: expected string, received undefined"
+      },
+      {
+        "path": [
+          "clueCandidates",
+          0
+        ],
+        "code": "unrecognized_keys",
+        "message": "Unrecognized key: \"id\""
+      }
+    ],
+    "finishReason": "stop"
+  }
+}

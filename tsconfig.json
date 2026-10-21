@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": [
+      "ES2022",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "types": [
+      "vite/client",
+      "node"
+    ]
+  },
+  "include": [
+    "packages/shared/src/**/*.ts",
+    "web/src/**/*.ts",
+    "web/src/**/*.tsx",
+    "server/src/**/*.ts",
+    "web/vite.config.ts",
+    "capacitor.config.ts",
+    "tests/**/*.ts",
+    "tests/**/*.tsx",
+    "eval/**/*.ts",
+    "eval/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "web/dist",
+    "android"
+  ]
+}

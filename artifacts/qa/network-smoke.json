@@ -1,0 +1,247 @@
+{
+  "status": "passed",
+  "generatedAt": "2026-10-20T07:05:36.040Z",
+  "browser": "System Edge via Playwright 1.62.1",
+  "browserExecutable": "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe",
+  "baseURL": "http://127.0.0.1:5173",
+  "pageClock": "page.clock.install/fastForward used to trigger the 40s deadline; Retry-After uses measured real elapsed time.",
+  "apiMode": "Every /api/** request is intercepted by in-process local fixtures. No API call reaches the server and no real AI/model call or model answer is made.",
+  "liveHealthObservedSeparately": {
+    "status": "ok",
+    "aiConfigured": false
+  },
+  "scenarios": [
+    {
+      "name": "40s deadline → calibration → same requestId retry",
+      "status": "passed",
+      "evidence": {
+        "clientDeadlineMs": 40000,
+        "clockAdvancedMs": 40001,
+        "timeoutQuestionRequestId": "963a5b00-cf1d-431f-98c2-f4e07c028254",
+        "retryQuestionRequestId": "963a5b00-cf1d-431f-98c2-f4e07c028254",
+        "calibrationGetObserved": true,
+        "inputRetained": true,
+        "localProgressUnchangedAtTimeout": true,
+        "oldTextAbsentAfterDelayedFixture": true,
+        "localProgressUnchangedAfterDelayedFixture": true,
+        "retryUsedSameRequestId": true,
+        "delayedInitialFixtureReleasedAfterTimeout": true,
+        "delayedInitialFixtureFulfilledAfterAbort": true,
+        "requestLog": [
+          {
+            "method": "GET",
+            "path": "/api/health"
+          },
+          {
+            "method": "GET",
+            "path": "/api/puzzles"
+          },
+          {
+            "method": "POST",
+            "path": "/api/sessions"
+          },
+          {
+            "method": "POST",
+            "path": "/api/sessions/deadline-session-1/questions",
+            "requestId": "963a5b00-cf1d-431f-98c2-f4e07c028254",
+            "expectedRevision": 0
+          },
+          {
+            "kind": "question-requestfailed",
+            "url": "http://127.0.0.1:5173/api/sessions/deadline-session-1/questions",
+            "error": "net::ERR_ABORTED"
+          },
+          {
+            "method": "GET",
+            "path": "/api/sessions/deadline-session-1"
+          },
+          {
+            "method": "POST",
+            "path": "/api/sessions/deadline-session-1/questions",
+            "requestId": "963a5b00-cf1d-431f-98c2-f4e07c028254",
+            "expectedRevision": 0
+          },
+          {
+            "method": "POST",
+            "path": "/api/sessions/deadline-session-1/leave",
+            "requestId": "738a6fa0-9be5-4f0d-8a09-a4daf1b57754",
+            "expectedRevision": 0
+          }
+        ]
+      },
+      "note": "The fixture returned no question result before the client deadline. A controlled 503 ended the retry; it is not a model result."
+    },
+    {
+      "name": "Retry-After 2s blocks retries until expiry and then reuses requestId",
+      "status": "passed",
+      "evidence": {
+        "retryAfterSeconds": 2,
+        "disabledImmediatelyAfter429": true,
+        "method": "real elapsed time with 200ms expiry margin",
+        "observedWaitBeforeExpiryMs": 1200,
+        "waitAfterResponseUntilExpiryMs": 948,
+        "retryDisabledBeforeExpiry": true,
+        "noRequestBeforeExpiry": true,
+        "firstRequestId": "0419ac02-1309-495d-83fe-35bb842cf64a",
+        "retryRequestId": "0419ac02-1309-495d-83fe-35bb842cf64a",
+        "sameRequestIdAfterExpiry": true,
+        "requestLog": [
+          {
+            "method": "GET",
+            "path": "/api/health"
+          },
+          {
+            "method": "GET",
+            "path": "/api/puzzles"
+          },
+          {
+            "method": "POST",
+            "path": "/api/sessions"
+          },
+          {
+            "method": "POST",
+            "path": "/api/sessions/retry-after-session-1/questions",
+            "requestId": "0419ac02-1309-495d-83fe-35bb842cf64a",
+            "expectedRevision": 0
+          },
+          {
+            "method": "POST",
+            "path": "/api/sessions/retry-after-session-1/questions",
+            "requestId": "0419ac02-1309-495d-83fe-35bb842cf64a",
+            "expectedRevision": 0
+          }
+        ]
+      },
+      "note": "Retry-After was a local fixture header. The post-expiry response was a controlled 503, not a model result."
+    },
+    {
+      "name": "Old pending action after leave does not pollute the next session",
+      "status": "passed",
+      "evidence": {
+        "oldRequestId": "85874961-fca5-47ec-bd95-1caf1127537f",
+        "oldRequestWasPendingAtLeave": true,
+        "oldFixtureReleaseAttemptedAfterNewSession": true,
+        "oldFixtureFulfilledByPlaywright": true,
+        "oldTextAbsentFromNewSession": true,
+        "newSessionVisible": true,
+        "requestLog": [
+          {
+            "method": "GET",
+            "path": "/api/health"
+          },
+          {
+            "method": "GET",
+            "path": "/api/puzzles"
+          },
+          {
+            "method": "POST",
+            "path": "/api/sessions"
+          },
+          {
+            "method": "POST",
+            "path": "/api/sessions/stale-response-session-1/questions",
+            "requestId": "85874961-fca5-47ec-bd95-1caf1127537f",
+            "expectedRevision": 0
+          },
+          {
+            "method": "POST",
+            "path": "/api/sessions/stale-response-session-1/leave",
+            "requestId": "bc7d9839-1fe7-4799-ae76-a5c426282754",
+            "expectedRevision": 0
+          },
+          {
+            "kind": "question-requestfailed",
+            "url": "http://127.0.0.1:5173/api/sessions/stale-response-session-1/questions",
+            "error": "net::ERR_ABORTED"
+          },
+          {
+            "method": "POST",
+            "path": "/api/sessions"
+          }
+        ]
+      },
+      "note": "Leave aborts the pending browser request. The delayed fixture response was released only after the next session opened; Playwright may report it unfulfillable because the browser already aborted the request."
+    },
+    {
+      "name": "429 → leave → new game clears the prior local cooldown",
+      "status": "passed",
+      "evidence": {
+        "oldRequestId": "3f799a50-cadf-4bf1-b402-d419110edd0b",
+        "libraryHadOldCooldownNotice": false,
+        "newGameEntryEnabledBeforeOriginalExpiry": true,
+        "createSessionCalls": 2,
+        "newSessionVisible": true,
+        "requestLog": [
+          {
+            "method": "GET",
+            "path": "/api/health"
+          },
+          {
+            "method": "GET",
+            "path": "/api/puzzles"
+          },
+          {
+            "method": "POST",
+            "path": "/api/sessions"
+          },
+          {
+            "method": "POST",
+            "path": "/api/sessions/clear-cooldown-session-1/questions",
+            "requestId": "3f799a50-cadf-4bf1-b402-d419110edd0b",
+            "expectedRevision": 0
+          },
+          {
+            "method": "POST",
+            "path": "/api/sessions/clear-cooldown-session-1/leave",
+            "requestId": "224bf8a0-d860-4100-8150-154b912c838d",
+            "expectedRevision": 0
+          },
+          {
+            "method": "POST",
+            "path": "/api/sessions"
+          }
+        ]
+      },
+      "note": "The fixture allowed session creation; a real server can still return a new 429 for its own current rate limit."
+    },
+    {
+      "name": "Playing → unlocked without solution → user reveal → completed UI",
+      "status": "passed",
+      "evidence": {
+        "unlockedStatusVisible": true,
+        "discoveredClueVisible": true,
+        "solutionHiddenBeforeReveal": true,
+        "solutionShownAfterReveal": true,
+        "revealRequestId": "a1c65666-649a-4401-b15f-585f50cbc1b6",
+        "requestLog": [
+          {
+            "method": "GET",
+            "path": "/api/health"
+          },
+          {
+            "method": "GET",
+            "path": "/api/puzzles"
+          },
+          {
+            "method": "POST",
+            "path": "/api/sessions"
+          },
+          {
+            "method": "POST",
+            "path": "/api/sessions/reveal-flow-session-1/questions",
+            "requestId": "17a7f231-58e1-46f1-8b48-eab6a577c5c8",
+            "expectedRevision": 0
+          },
+          {
+            "method": "POST",
+            "path": "/api/sessions/reveal-flow-session-1/reveal",
+            "requestId": "a1c65666-649a-4401-b15f-585f50cbc1b6",
+            "expectedRevision": 1
+          }
+        ]
+      },
+      "note": "All puzzle and solution text in this scenario came from local fixtures. This validates UI/protocol transitions only; it does not validate AI output or a real answer."
+    }
+  ],
+  "completedAt": "2026-10-20T07:05:44.587Z"
+}

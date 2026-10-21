@@ -1,0 +1,208 @@
+{
+  "startedAtUtc": "2026-10-20T07:00:38.600Z",
+  "startedAtShanghai": "2026-10-20 15:00:38 Asia/Shanghai (UTC+08:00)",
+  "browser": {
+    "name": "Microsoft Edge",
+    "executablePath": "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0",
+    "version": "155.0.0.0",
+    "headless": true,
+    "disableGpu": true,
+    "engineVersion": "155.0.4283.45"
+  },
+  "appUrl": "http://127.0.0.1:5173/",
+  "api": {
+    "healthUrl": "http://127.0.0.1:8787/api/health",
+    "healthStatus": 200,
+    "configured": false
+  },
+  "realBackend": true,
+  "aiCallsMade": false,
+  "results": [
+    {
+      "width": 320,
+      "height": 900,
+      "assertions": {
+        "libraryBrandAndFirstPuzzle": true,
+        "libraryNoHorizontalOverflow": true,
+        "gameProgressZeroOfFour": true,
+        "aiNotConfiguredInline": true,
+        "genericQuestionRetained": true,
+        "askDisabledWhenUnconfigured": true,
+        "hintDisabledWhenUnconfigured": true,
+        "gameNoHorizontalOverflow": true,
+        "gameScreenshotSaved": true,
+        "noQuestionOrHintRequestSent": true,
+        "realBackendGiveUpSucceeded": true,
+        "givenUpStatusVisible": true,
+        "solutionVisible": true,
+        "solutionNoHorizontalOverflow": true,
+        "solutionScreenshotSaved": true,
+        "refreshReturnsToLibrary": true,
+        "localStorageHasNoHistory": true,
+        "noPageErrors": true,
+        "realBackendHealthAndPuzzleRead": true
+      },
+      "apiResponses": [
+        {
+          "method": "GET",
+          "path": "/api/health",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/puzzles",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/api/sessions",
+          "status": 201
+        },
+        {
+          "method": "POST",
+          "path": "/api/sessions/:session/give-up",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/health",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/puzzles",
+          "status": 200
+        }
+      ],
+      "pageErrors": [],
+      "localStorageKeyCount": 0,
+      "status": "passed"
+    },
+    {
+      "width": 390,
+      "height": 900,
+      "assertions": {
+        "libraryBrandAndFirstPuzzle": true,
+        "libraryNoHorizontalOverflow": true,
+        "libraryScreenshotSaved": true,
+        "gameProgressZeroOfFour": true,
+        "aiNotConfiguredInline": true,
+        "genericQuestionRetained": true,
+        "askDisabledWhenUnconfigured": true,
+        "hintDisabledWhenUnconfigured": true,
+        "gameNoHorizontalOverflow": true,
+        "gameScreenshotSaved": true,
+        "noQuestionOrHintRequestSent": true,
+        "realBackendGiveUpSucceeded": true,
+        "givenUpStatusVisible": true,
+        "solutionVisible": true,
+        "solutionNoHorizontalOverflow": true,
+        "solutionScreenshotSaved": true,
+        "refreshReturnsToLibrary": true,
+        "localStorageHasNoHistory": true,
+        "noPageErrors": true,
+        "realBackendHealthAndPuzzleRead": true
+      },
+      "apiResponses": [
+        {
+          "method": "GET",
+          "path": "/api/health",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/puzzles",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/api/sessions",
+          "status": 201
+        },
+        {
+          "method": "POST",
+          "path": "/api/sessions/:session/give-up",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/health",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/puzzles",
+          "status": 200
+        }
+      ],
+      "pageErrors": [],
+      "localStorageKeyCount": 0,
+      "status": "passed"
+    },
+    {
+      "width": 768,
+      "height": 900,
+      "assertions": {
+        "libraryBrandAndFirstPuzzle": true,
+        "libraryNoHorizontalOverflow": true,
+        "gameProgressZeroOfFour": true,
+        "aiNotConfiguredInline": true,
+        "genericQuestionRetained": true,
+        "askDisabledWhenUnconfigured": true,
+        "hintDisabledWhenUnconfigured": true,
+        "gameNoHorizontalOverflow": true,
+        "gameScreenshotSaved": true,
+        "noQuestionOrHintRequestSent": true,
+        "realBackendGiveUpSucceeded": true,
+        "givenUpStatusVisible": true,
+        "solutionVisible": true,
+        "solutionNoHorizontalOverflow": true,
+        "solutionScreenshotSaved": true,
+        "refreshReturnsToLibrary": true,
+        "localStorageHasNoHistory": true,
+        "noPageErrors": true,
+        "realBackendHealthAndPuzzleRead": true
+      },
+      "apiResponses": [
+        {
+          "method": "GET",
+          "path": "/api/health",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/puzzles",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/api/sessions",
+          "status": 201
+        },
+        {
+          "method": "POST",
+          "path": "/api/sessions/:session/give-up",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/health",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/puzzles",
+          "status": 200
+        }
+      ],
+      "pageErrors": [],
+      "localStorageKeyCount": 0,
+      "status": "passed"
+    }
+  ],
+  "errors": [],
+  "finishedAtUtc": "2026-10-20T07:00:41.685Z",
+  "finishedAtShanghai": "2026-10-20 15:00:41 Asia/Shanghai (UTC+08:00)",
+  "status": "passed"
+}

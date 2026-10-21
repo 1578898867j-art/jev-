@@ -1,0 +1,13 @@
+{
+  "name": "@ai-turtle-soup/shared",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "types": "./src/contracts.ts",
+  "exports": {
+    ".": {
+      "types": "./src/contracts.ts",
+      "import": "./src/contracts.ts"
+    }
+  }
+}

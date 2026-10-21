@@ -1,0 +1,7 @@
+{
+  "at": "2026-10-20T11:28:25.018Z",
+  "filesScanned": 140,
+  "passed": true,
+  "matches": [],
+  "scope": "Git candidate files; exact API key/workspace host bytes and known private local paths; no credential values recorded"
+}

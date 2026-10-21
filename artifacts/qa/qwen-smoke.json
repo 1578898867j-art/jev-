@@ -1,0 +1,156 @@
+{
+  "model": "qwen3.8-flash",
+  "qaPromptVersion": "qa-v2",
+  "hintPromptVersion": "hint-v1",
+  "createdAt": "2026-10-20T10:13:12.942Z",
+  "startedAt": "2026-10-20T10:13:07.083Z",
+  "finishedAt": "2026-10-20T10:13:12.942Z",
+  "requestCount": 3,
+  "timeoutMs": 30000,
+  "status": "passed",
+  "counts": {
+    "matched": 3,
+    "mismatch": 0,
+    "error": 0
+  },
+  "cases": [
+    {
+      "caseId": "BOD-P01",
+      "split": "regression",
+      "category": "clue-positive",
+      "promptVersion": "qa-v2",
+      "contentVersion": "1.0.0",
+      "action": {
+        "type": "question",
+        "text": "天幕上的星点是室内投影仪打出来的吗？"
+      },
+      "history": [],
+      "expected": {
+        "judgment": "yes",
+        "addedClueIds": [
+          "projected-sky"
+        ],
+        "status": "playing",
+        "hintsUsedDelta": 0
+      },
+      "actual": {
+        "judgment": "yes",
+        "addedClueIds": [
+          "projected-sky"
+        ],
+        "status": "playing",
+        "hintsUsedDelta": 0,
+        "userVisibleText": "天幕之外\n郊外观测站的夜场里，讲解员忽然把满天星星关掉。屋里一下漆黑，游客没有抱怨，反而安静地等了片刻。\n室内天幕上的星图由投影仪产生。\n是。"
+      },
+      "outcome": "matched",
+      "errorCode": null,
+      "elapsedMs": 1360.02,
+      "requestCount": 1,
+      "httpStatus": 200,
+      "requestElapsedMs": 1358.47,
+      "requestParameters": {
+        "model": "qwen3.8-flash",
+        "max_completion_tokens": 2048,
+        "enable_thinking": false
+      },
+      "finishReason": "stop",
+      "usage": {
+        "prompt_tokens": 1628,
+        "completion_tokens": 49,
+        "total_tokens": 1677
+      },
+      "manualLeakageReviewRequired": false,
+      "forbiddenTextFindings": []
+    },
+    {
+      "caseId": "BOD-P03",
+      "split": "regression",
+      "category": "clue-negative",
+      "promptVersion": "qa-v2",
+      "contentVersion": "1.0.0",
+      "action": {
+        "type": "question",
+        "text": "天幕上的星星不是投影出来的，对吗？"
+      },
+      "history": [],
+      "expected": {
+        "judgment": "no",
+        "addedClueIds": [],
+        "status": "playing",
+        "hintsUsedDelta": 0
+      },
+      "actual": {
+        "judgment": "no",
+        "addedClueIds": [],
+        "status": "playing",
+        "hintsUsedDelta": 0,
+        "userVisibleText": "天幕之外\n郊外观测站的夜场里，讲解员忽然把满天星星关掉。屋里一下漆黑，游客没有抱怨，反而安静地等了片刻。\n否。"
+      },
+      "outcome": "matched",
+      "errorCode": null,
+      "elapsedMs": 2450.91,
+      "requestCount": 1,
+      "httpStatus": 200,
+      "requestElapsedMs": 2450.55,
+      "requestParameters": {
+        "model": "qwen3.8-flash",
+        "max_completion_tokens": 2048,
+        "enable_thinking": false
+      },
+      "finishReason": "stop",
+      "usage": {
+        "prompt_tokens": 1628,
+        "completion_tokens": 11,
+        "total_tokens": 1639
+      },
+      "manualLeakageReviewRequired": false,
+      "forbiddenTextFindings": []
+    },
+    {
+      "caseId": "BOD-H01",
+      "split": "regression",
+      "category": "hint",
+      "promptVersion": "hint-v1",
+      "contentVersion": "1.0.0",
+      "action": {
+        "type": "hint"
+      },
+      "history": [],
+      "expected": {
+        "addedClueIds": [],
+        "status": "playing",
+        "hintsUsedDelta": 1
+      },
+      "actual": {
+        "addedClueIds": [],
+        "status": "playing",
+        "hintsUsedDelta": 1,
+        "hint": {
+          "targetClueId": "projected-sky",
+          "angleId": "display-source",
+          "text": "天幕上的星点并非来自室外，而是室内设备模拟的结果。"
+        },
+        "userVisibleText": "天幕之外\n郊外观测站的夜场里，讲解员忽然把满天星星关掉。屋里一下漆黑，游客没有抱怨，反而安静地等了片刻。\n天幕上的星点并非来自室外，而是室内设备模拟的结果。"
+      },
+      "outcome": "matched",
+      "errorCode": null,
+      "elapsedMs": 2046.1,
+      "requestCount": 1,
+      "httpStatus": 200,
+      "requestElapsedMs": 2043.76,
+      "requestParameters": {
+        "model": "qwen3.8-flash",
+        "max_completion_tokens": 2048,
+        "enable_thinking": false
+      },
+      "finishReason": "stop",
+      "usage": {
+        "prompt_tokens": 1004,
+        "completion_tokens": 35,
+        "total_tokens": 1039
+      },
+      "manualLeakageReviewRequired": false,
+      "forbiddenTextFindings": []
+    }
+  ]
+}

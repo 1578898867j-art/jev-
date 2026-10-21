@@ -1,0 +1,139 @@
+{
+  "id": "beyond-the-dome",
+  "version": "1.0.0",
+  "title": "天幕之外",
+  "surface": "郊外观测站的夜场里，讲解员忽然把满天星星关掉。屋里一下漆黑，游客没有抱怨，反而安静地等了片刻。",
+  "solution": "这是一场真实观星活动。室内天幕上的星图由投影仪模拟，观测站的屋顶可以打开。当晚郊外夜空中的星星可见。讲解员关闭人工投影并打开屋顶，是为了让游客观看真实夜空；游客最后确实看到了真实星空。这不是停电或设备故障。",
+  "clues": [
+    {
+      "id": "projected-sky",
+      "kind": "fact",
+      "required": true,
+      "meaning": "室内天幕上的星图由投影仪产生。只提到天幕、星星或星图存在不够；否定投影来源不能命中。",
+      "publicText": "室内天幕上的星图由投影仪产生。",
+      "positiveExamples": [
+        "天幕上的星星是室内投影仪打出来的吗？",
+        "室内星图是由投影设备投射出来的，对吗？"
+      ],
+      "negativeExamples": [
+        "天幕上的星星不是投影出来的，对吗？",
+        "观测站有一块天幕吗？"
+      ],
+      "hintAngles": [
+        {
+          "id": "display-source",
+          "direction": "想想天幕上的星点是从哪里来的，区分室内显示与室外天体。"
+        },
+        {
+          "id": "operator-action",
+          "direction": "留意讲解员能控制什么，以及星点消失是否一定是故障。"
+        },
+        {
+          "id": "artificial-or-real",
+          "direction": "把室内呈现的星图与屋外真实夜空分开考虑。"
+        }
+      ]
+    },
+    {
+      "id": "openable-roof",
+      "kind": "fact",
+      "required": true,
+      "meaning": "观测站的屋顶可以打开。只提到观测站有窗户或可以看天空不够；否定屋顶可开不能命中。",
+      "publicText": "观测站的屋顶可以打开。",
+      "positiveExamples": [
+        "观测站的屋顶可以打开吗？",
+        "观测室上方的顶棚能移动开启吗？"
+      ],
+      "negativeExamples": [
+        "屋顶不能打开，是吗？",
+        "观测站有窗户吗？"
+      ],
+      "hintAngles": [
+        {
+          "id": "room-boundary",
+          "direction": "想想室内与室外之间的遮挡在这场观星活动中有什么作用。"
+        },
+        {
+          "id": "overhead-structure",
+          "direction": "留意观测站上方的结构是否始终固定封闭。"
+        },
+        {
+          "id": "line-of-sight",
+          "direction": "考虑游客怎样能从室内直接望向夜空。"
+        }
+      ]
+    },
+    {
+      "id": "visitors-saw-real-sky",
+      "kind": "fact",
+      "required": true,
+      "meaning": "游客最后确实亲眼看到了室外真实星空。仅说外面有星星、天气晴朗，或讲解员希望游客看到星空，都不足以表达这个已发生的结果。",
+      "publicText": "游客最后看到了真实星空。",
+      "positiveExamples": [
+        "游客最后看到的是真正的室外星空吗？",
+        "安静等候后，大家亲眼看见了外面的真实星星，对吗？"
+      ],
+      "negativeExamples": [
+        "那晚郊外天空里有星星，对吗？",
+        "游客最后只是在天幕上看到了人工星图吗？"
+      ],
+      "hintAngles": [
+        {
+          "id": "observed-outcome",
+          "direction": "关注游客等待结束后实际看见了什么。"
+        },
+        {
+          "id": "inside-outside",
+          "direction": "对比天幕上的显示与观测站外的景象。"
+        },
+        {
+          "id": "actual-event",
+          "direction": "区分当晚具备观星条件与游客是否真的观测到了星空。"
+        }
+      ]
+    },
+    {
+      "id": "switch-to-real-sky",
+      "kind": "cause",
+      "required": true,
+      "meaning": "关闭人工投影并打开屋顶，是为了让游客观看真实星空；线索表达这两个事实与观看目的之间的正确关系。只列出事实、只说动作先后、反向归因，或在缺少可补足上下文时孤立提及单项操作，都不足以表达该完整目的因果。因果命中不自动证明游客最终确实看到了星空；实际观看结果由 visitors-saw-real-sky 单独记录。唯一且已确认的上下文可补足被省略的指代。",
+      "publicText": "关闭人工投影并打开屋顶，是为了让游客观看真实星空。",
+      "positiveExamples": [
+        "讲解员关掉投影并打开屋顶，是为了让游客看真实夜空吗？",
+        "熄掉室内星图、开启屋顶，目的就是让大家观看真正的星空，对吗？"
+      ],
+      "negativeExamples": [
+        "游客先看见真实星空，所以讲解员才关掉投影并打开屋顶吗？",
+        "关闭投影并打开屋顶不是为了让游客看真实星空，对吗？",
+        "室内星图来自投影，屋顶也能打开；游客后来还看到了真实星空。"
+      ],
+      "cause": {
+        "fromFactIds": [
+          "projected-sky",
+          "openable-roof"
+        ],
+        "toFactIds": [
+          "visitors-saw-real-sky"
+        ]
+      },
+      "hintAngles": [
+        {
+          "id": "action-to-purpose",
+          "direction": "把讲解员的操作与游客等待后要观看的内容联系起来。"
+        },
+        {
+          "id": "direction-of-cause",
+          "direction": "分清哪些操作是为了产生后面的观看体验，而不是把先后顺序当作原因。"
+        },
+        {
+          "id": "combine-known-facts",
+          "direction": "结合已确认的室内星图来源和屋顶结构，考虑讲解员此举的目的。"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "kind": "original",
+    "note": "本题为本项目原创故事和表达；未改写或复用外部题库内容。"
+  }
+}

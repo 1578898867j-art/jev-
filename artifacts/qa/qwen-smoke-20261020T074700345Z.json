@@ -1,0 +1,140 @@
+{
+  "model": "qwen3.8-flash",
+  "createdAt": "2026-10-20T07:47:02.977Z",
+  "startedAt": "2026-10-20T07:47:00.345Z",
+  "finishedAt": "2026-10-20T07:47:02.977Z",
+  "requestCount": 3,
+  "timeoutMs": 30000,
+  "status": "failed",
+  "counts": {
+    "matched": 2,
+    "mismatch": 0,
+    "error": 1
+  },
+  "cases": [
+    {
+      "caseId": "BOD-P01",
+      "split": "regression",
+      "category": "clue-positive",
+      "action": {
+        "type": "question",
+        "text": "天幕上的星点是室内投影仪打出来的吗？"
+      },
+      "history": [],
+      "expected": {
+        "judgment": "yes",
+        "addedClueIds": [
+          "projected-sky"
+        ],
+        "status": "playing",
+        "hintsUsedDelta": 0
+      },
+      "actual": null,
+      "outcome": "error",
+      "errorCode": "INVALID_MODEL_OUTPUT",
+      "elapsedMs": 1148.53,
+      "requestCount": 1,
+      "httpStatus": 200,
+      "requestElapsedMs": 1144.98,
+      "requestParameters": {
+        "model": "qwen3.8-flash",
+        "max_completion_tokens": 2048,
+        "enable_thinking": false
+      },
+      "finishReason": "stop",
+      "usage": {
+        "prompt_tokens": 1441,
+        "completion_tokens": 47,
+        "total_tokens": 1488
+      },
+      "manualLeakageReviewRequired": false,
+      "forbiddenTextFindings": []
+    },
+    {
+      "caseId": "BOD-P03",
+      "split": "regression",
+      "category": "clue-negative",
+      "action": {
+        "type": "question",
+        "text": "天幕上的星星不是投影出来的，对吗？"
+      },
+      "history": [],
+      "expected": {
+        "judgment": "no",
+        "addedClueIds": [],
+        "status": "playing",
+        "hintsUsedDelta": 0
+      },
+      "actual": {
+        "judgment": "no",
+        "addedClueIds": [],
+        "status": "playing",
+        "hintsUsedDelta": 0,
+        "userVisibleText": "天幕之外\n郊外观测站的夜场里，讲解员忽然把满天星星关掉。屋里一下漆黑，游客没有抱怨，反而安静地等了片刻。\n否。"
+      },
+      "outcome": "matched",
+      "errorCode": null,
+      "elapsedMs": 565.66,
+      "requestCount": 1,
+      "httpStatus": 200,
+      "requestElapsedMs": 564.93,
+      "requestParameters": {
+        "model": "qwen3.8-flash",
+        "max_completion_tokens": 2048,
+        "enable_thinking": false
+      },
+      "finishReason": "stop",
+      "usage": {
+        "prompt_tokens": 1441,
+        "completion_tokens": 11,
+        "total_tokens": 1452
+      },
+      "manualLeakageReviewRequired": false,
+      "forbiddenTextFindings": []
+    },
+    {
+      "caseId": "BOD-H01",
+      "split": "regression",
+      "category": "hint",
+      "action": {
+        "type": "hint"
+      },
+      "history": [],
+      "expected": {
+        "addedClueIds": [],
+        "status": "playing",
+        "hintsUsedDelta": 1
+      },
+      "actual": {
+        "addedClueIds": [],
+        "status": "playing",
+        "hintsUsedDelta": 1,
+        "hint": {
+          "targetClueId": "projected-sky",
+          "angleId": "display-source",
+          "text": "请思考室内天幕上的星点究竟源自何处，区分它们是来自外部真实天体还是某种内部显示机制。"
+        },
+        "userVisibleText": "天幕之外\n郊外观测站的夜场里，讲解员忽然把满天星星关掉。屋里一下漆黑，游客没有抱怨，反而安静地等了片刻。\n请思考室内天幕上的星点究竟源自何处，区分它们是来自外部真实天体还是某种内部显示机制。"
+      },
+      "outcome": "matched",
+      "errorCode": null,
+      "elapsedMs": 915.29,
+      "requestCount": 1,
+      "httpStatus": 200,
+      "requestElapsedMs": 913.88,
+      "requestParameters": {
+        "model": "qwen3.8-flash",
+        "max_completion_tokens": 2048,
+        "enable_thinking": false
+      },
+      "finishReason": "stop",
+      "usage": {
+        "prompt_tokens": 1004,
+        "completion_tokens": 45,
+        "total_tokens": 1049
+      },
+      "manualLeakageReviewRequired": false,
+      "forbiddenTextFindings": []
+    }
+  ]
+}

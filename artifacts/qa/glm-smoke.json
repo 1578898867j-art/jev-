@@ -1,0 +1,99 @@
+{
+  "model": "ZHIPU/GLM-5.3-Flash",
+  "createdAt": "2026-10-20T07:32:10.067Z",
+  "startedAt": "2026-10-20T07:32:08.432Z",
+  "finishedAt": "2026-10-20T07:32:10.067Z",
+  "requestCount": 3,
+  "timeoutMs": 30000,
+  "maxTokens": 8192,
+  "reasoningEffort": "low",
+  "cases": [
+    {
+      "caseId": "BOD-P01",
+      "split": "regression",
+      "category": "clue-positive",
+      "action": {
+        "type": "question",
+        "text": "天幕上的星点是室内投影仪打出来的吗？"
+      },
+      "history": [],
+      "expected": {
+        "judgment": "yes",
+        "addedClueIds": [
+          "projected-sky"
+        ],
+        "status": "playing",
+        "hintsUsedDelta": 0
+      },
+      "actual": null,
+      "outcome": "error",
+      "errorCode": "AI_UNAVAILABLE",
+      "elapsedMs": 868.52,
+      "requestCount": 1,
+      "httpStatus": 400,
+      "requestElapsedMs": 867.34,
+      "finishReason": null,
+      "usage": null
+    },
+    {
+      "caseId": "BOD-P03",
+      "split": "regression",
+      "category": "clue-negative",
+      "action": {
+        "type": "question",
+        "text": "天幕上的星星不是投影出来的，对吗？"
+      },
+      "history": [],
+      "expected": {
+        "judgment": "no",
+        "addedClueIds": [],
+        "status": "playing",
+        "hintsUsedDelta": 0
+      },
+      "actual": null,
+      "outcome": "error",
+      "errorCode": "AI_UNAVAILABLE",
+      "elapsedMs": 275.63,
+      "requestCount": 1,
+      "httpStatus": 400,
+      "requestElapsedMs": 275.31,
+      "finishReason": null,
+      "usage": null
+    },
+    {
+      "caseId": "BOD-H01",
+      "split": "regression",
+      "category": "hint",
+      "action": {
+        "type": "hint"
+      },
+      "history": [],
+      "expected": {
+        "addedClueIds": [],
+        "status": "playing",
+        "hintsUsedDelta": 1
+      },
+      "actual": null,
+      "outcome": "error",
+      "errorCode": "AI_UNAVAILABLE",
+      "elapsedMs": 489.32,
+      "requestCount": 1,
+      "httpStatus": 400,
+      "requestElapsedMs": 488.85,
+      "finishReason": null,
+      "usage": null
+    }
+  ],
+  "status": "failed",
+  "counts": {
+    "matched": 0,
+    "mismatch": 0,
+    "error": 3
+  },
+  "diagnosticReference": {
+    "source": "separate sanitized minimal JSON diagnostic request",
+    "code": "invalid_parameter_error",
+    "message": "The product is not activated...",
+    "interpretation": "Provider activation prevented completion; semantic model quality remains unassessed."
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "at": "2026-10-20T06:51:47.713Z",
+  "scope": "Local development file boundary and production web-dist-only static routes; no model calls",
+  "results": [
+    {
+      "path": "http://127.0.0.1:5173/",
+      "status": 200,
+      "contentType": "text/html",
+      "publicShell": true,
+      "passed": true
+    },
+    {
+      "path": "http://127.0.0.1:5173/src/main.tsx",
+      "status": 200,
+      "contentType": "text/javascript",
+      "publicShell": false,
+      "passed": true
+    },
+    {
+      "path": "http://127.0.0.1:5173/api/puzzles",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "publicShell": false,
+      "passed": true
+    },
+    {
+      "path": "http://127.0.0.1:5173/@fs/D:/下载/ai-turtle-soup/content/puzzles/beyond-the-dome.json?raw",
+      "status": 403,
+      "contentType": "",
+      "publicShell": false,
+      "passed": true
+    },
+    {
+      "path": "http://127.0.0.1:5173/@fs/D:/下载/ai-turtle-soup/server/src/app.ts?raw",
+      "status": 403,
+      "contentType": "",
+      "publicShell": false,
+      "passed": true
+    },
+    {
+      "path": "http://127.0.0.1:5173/@fs/D:/下载/ai-turtle-soup/eval/cases/beyond-the-dome.json?raw",
+      "status": 403,
+      "contentType": "",
+      "publicShell": false,
+      "passed": true
+    },
+    {
+      "path": "http://127.0.0.1:5173/@fs/D%3A/下载/ai-turtle-soup/content/puzzles/beyond-the-dome.json?raw",
+      "status": 200,
+      "contentType": "text/html",
+      "publicShell": true,
+      "passed": true
+    },
+    {
+      "path": "http://127.0.0.1:8787/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "publicShell": true,
+      "passed": true
+    },
+    {
+      "path": "http://127.0.0.1:8787/content/puzzles/beyond-the-dome.json",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "publicShell": false,
+      "passed": true
+    },
+    {
+      "path": "http://127.0.0.1:8787/eval/cases/beyond-the-dome.json",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "publicShell": false,
+      "passed": true
+    },
+    {
+      "path": "http://127.0.0.1:8787/server/src/app.ts",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "publicShell": false,
+      "passed": true
+    }
+  ],
+  "publicCatalog": {
+    "puzzles": [
+      {
+        "id": "beyond-the-dome",
+        "version": "1.0.0",
+        "title": "天幕之外",
+        "surface": "郊外观测站的夜场里，讲解员忽然把满天星星关掉。屋里一下漆黑，游客没有抱怨，反而安静地等了片刻。",
+        "requiredClueCount": 4
+      }
+    ]
+  }
+}

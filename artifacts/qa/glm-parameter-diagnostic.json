@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-20T07:33:22.404Z",
+  "operation": "single parameter diagnostic on user-specified host",
+  "model": "ZHIPU/GLM-5.3-Flash",
+  "status": 400,
+  "errorCode": "invalid_parameter_error",
+  "errorType": "invalid_request_error",
+  "message": "The product is not activated, please confirm that you have activated products and try again after activation.",
+  "finishReason": null,
+  "hasContent": false,
+  "usage": null
+}

@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-20T07:21:45.025Z",
+  "provider": "Alibaba Cloud Model Studio",
+  "region": "cn-beijing",
+  "operation": "GET models on user-specified workspace host",
+  "networkMode": "authorized network",
+  "status": 200,
+  "matchingModels": [
+    "ZHIPU/GLM-5.3-FlashX",
+    "ZHIPU/GLM-5.3-Flash"
+  ],
+  "errorCode": null
+}

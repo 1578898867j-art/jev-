@@ -1,15 +1,23 @@
-# Gradle files
+node_modules/
+.npm-cache/
+.omx/
+web/dist/
+coverage/
+*.tsbuildinfo
+npm-debug.log*
+.env
+.env.*
+!.env.example
+/android/.gradle/
+/android/local.properties
+/android/build/
+/android/app/build/
+
+# Android / Gradle local state and generated outputs
 .gradle/
 build/
 .kotlin/
-
-# Local configuration file (sdk path, etc)
 local.properties
-
-# Log/OS Files
-*.log
-
-# Android Studio generated files and folders
 captures/
 .externalNativeBuild/
 .cxx/
@@ -17,19 +25,18 @@ captures/
 *.apk
 output-metadata.json
 
-# IntelliJ
+# IDE metadata
 *.iml
 .idea/
 misc.xml
 deploymentTargetDropDown.xml
 render.experimental.xml
 
-# Keystore files
+# Signing credentials, Google services config, and profiling output
 *.jks
 *.keystore
-
-# Google Services (e.g. APIs or Firebase)
 google-services.json
-
-# Android Profiling
 *.hprof
+
+# Keep machine-specific logs and build outputs out of commits
+*.log
